@@ -21,11 +21,11 @@ endif
 
 # ------- Source Files are Listed Here ---------------------------
 
-SOURCES = main.cpp Abonne.pp Livre.cpp Emprunt.cpp Bibliotheque.cpp Customer.cpp Registered.cpp 
+SOURCES = main.cpp Subscriber.pp Book.cpp Borrow.cpp Library.cpp
 
 # ------- Object Files are the same as Sources -------------------
 
-OBJS    = main.o Abonne.o Livre.o Emprunt.o Bibliotheque.o Customer.o Registered.o
+OBJS    = main.o Subscriber.o Book.o Borrow.o Library.o
 
 # ------- Compiler flags and things ------------------------------
 
@@ -86,26 +86,14 @@ clean:
 # ---------------------------------------------------------------
 
 drop: ${OBJS}
-	${CC} -o library.exe ${CFLAGS} ${FLAGS} ${OBJS} ${LIBS}
+	${CC} -o lmis ${CFLAGS} ${FLAGS} ${OBJS} ${LIBS}
 
-library.exe$(O) : main.cpp Abonne.h Bibliotheque.h Livre.h
+lmis$(O) : main.cpp Subscriber.h Book.h Borrow.h Library.h
 
-Abonne$(O) : Abonne.cpp Abonne.h
+Subscriber$(O) : Subscriber.cpp Subscriber.h
 
-Customer$(O) : Customer.cpp Customer.h
+Book$(O) : Book.cpp Book.h
 
-Registered$(O) : Registered.cpp Registered.h
+Borrow$(O) : Borrow.cpp Borrow.h
 
-Livre$(O) : Livre.cpp Livre.h 
-
-Emprunt$(O) : Emprunt.cpp Emprunt.h 
-
-Bibliotheque$(O) : Bibliotheque.cpp Bibliotheque.h 
-#
-#x2root$(O) : x2root.c quadratic.h
-#
-#max$(O) : max.c quadratic.h
-#
-#min$(O) : min.c quadratic.h
-
-#negatifdelta$(O) : negatifdelta.c quadratic.h
+Library$(O) : Library.cpp Library.h

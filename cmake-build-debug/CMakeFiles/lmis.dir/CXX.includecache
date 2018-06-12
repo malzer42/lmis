@@ -33,6 +33,8 @@ Library.h
 /home/pam/dev/cpp/lmis/Library.h
 
 /home/pam/dev/cpp/lmis/Library.h
+iostream
+-
 memory
 -
 Subscriber.h

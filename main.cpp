@@ -1,7 +1,10 @@
-// main.cpp: Controller for the lmis project
-// Created by pam on 08/06/18.
-// Usage: compiled with cmake
-// This main.cpp is used for integration testing of all classes created in the project lmis
+// main.cpp: Cpp file Controller for the lmis project.
+// Author(s): Pierre Abraham.
+// Date of creation (modification): 2018/06/10 (2018/06/100.
+// Description: Integration testing of four classes -- Subscriber, Book, Borrow, and Library.
+// Usage: Controller/Driver.
+// Compilation: Makefile provided.
+// Run: ./lmis
 
 
 #include <iostream>
@@ -27,6 +30,8 @@ int main(int argc, char* argv[])
 		Subscriber sub3 = Subscriber("1268348", "Martin", "Tremblay", 18);
 		Subscriber sub4 = sub1;
 		Subscriber sub5 = Subscriber(sub2);
+		Subscriber sub6(sub3);
+
 		sub1.print();
 		sub2.print();
 		sub3.print();
@@ -55,14 +60,36 @@ int main(int argc, char* argv[])
 		book4->print();
 		book5->print();
 
+		std::cout << "\nPROCESSING SUBSCRIBERS AND BOOKS IN THE LIBRARY\n\n";
 		Library library;
 		library.addSubscriber(sub1);
 		library.addSubscriber(sub2);
 		library.addSubscriber(sub3);
 		library.addSubscriber(sub4);
 		library.addSubscriber(sub5);
+		library.addSubscriber(sub6);
 
-		std::cout << "Program Ended Successfully!\n";
+		std::cout <<"\n\n";
+
+		library.addBook(*book1);
+		library.addBook(*book2);
+		library.addBook(*book3);
+		library.addBook(*book4);
+		library.addBook(*book5);
+
+
+		library.print();
+
+		std::cout << "\nREMOVING A SUBSCRIBER IN THE LIBRARY BASED ON THE ID:\n\n";
+
+		std::string idSubscriber = "1630236";
+		std::cout << '#' << idSubscriber <<"\n\n";
+		library.removeSubscriber(idSubscriber);
+
+		library.print();
+
+
+		std::cout << "\nProgram Ended Successfully!\n";
 
 		return 0;
 
@@ -74,7 +101,10 @@ int main(int argc, char* argv[])
 	catch (Book::BadBook e){
 		std::cerr << e.exceptionMsg << '\n';
 	}
+	catch (Library::BadLibrary e){
+		std::cerr << e.exceptionMsg << '\n';
+	}
 	catch(...){
-		std::cerr << "Unknow Exception thrown\n ";
+		std::cerr << "Unknown Exception thrown\n";
 	}
 }
