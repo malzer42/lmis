@@ -32,14 +32,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80e99f36-da97-4793-b1d6-8d2254e0a681" name="Default" comment="@2h adding additional feature in Library.h, Library.cpp and main.cpp">
+    <list default="true" id="80e99f36-da97-4793-b1d6-8d2254e0a681" name="Default" comment="@2h using Regular expression library &lt;regex&gt; for pattern matching inLibrary.cpp and adding proper comments on methods">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/pam.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/pam.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Book.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Book.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Book.h" beforeDir="false" afterPath="$PROJECT_DIR$/Book.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Borrow.h" beforeDir="false" afterPath="$PROJECT_DIR$/Borrow.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Library.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library.h" beforeDir="false" afterPath="$PROJECT_DIR$/Library.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Subscriber.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriber.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Subscriber.h" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriber.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Book.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Book.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Borrow.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Borrow.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Library.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Library.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Subscriber.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Subscriber.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lmis" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lmis" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
@@ -55,23 +62,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+            <state relative-caret-position="-1080">
+              <caret column="54" selection-start-column="54" selection-end-column="54" />
               <folding>
-                <element signature="e#200#219#0" expanded="true" />
+                <element signature="e#329#348#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Library.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Library.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Library.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="181" column="33" selection-start-line="181" selection-start-column="33" selection-end-line="181" selection-end-column="33" />
+            <state relative-caret-position="239">
+              <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -79,20 +86,8 @@
       <file leaf-file-name="Library.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Library.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="32" column="100" selection-start-line="32" selection-start-column="100" selection-end-line="32" selection-end-column="100" />
-              <folding>
-                <element signature="e#148#167#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Borrow.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Borrow.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="-118">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -100,8 +95,38 @@
       <file leaf-file-name="Book.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Book.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
+            <state relative-caret-position="168">
+              <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+              <folding>
+                <element signature="e#409#428#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Book.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Book.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Subscriber.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Subscriber.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="92" column="2" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Subscriber.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Subscriber.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -119,22 +144,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library.h" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$USER_HOME$/lms/src/Subscriber.h" />
         <option value="$USER_HOME$/lms/src/main.cpp" />
-        <option value="$PROJECT_DIR$/Subscriber.h" />
-        <option value="$PROJECT_DIR$/Subscriber.cpp" />
-        <option value="$PROJECT_DIR$/Book.h" />
-        <option value="$PROJECT_DIR$/Book.cpp" />
-        <option value="$PROJECT_DIR$/Borrow.h" />
         <option value="$PROJECT_DIR$/Borrow.cpp" />
         <option value="$PROJECT_DIR$/Makefile" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Library.h" />
+        <option value="$PROJECT_DIR$/Borrow.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Library.h" />
+        <option value="$PROJECT_DIR$/Subscriber.h" />
+        <option value="$PROJECT_DIR$/Subscriber.cpp" />
+        <option value="$PROJECT_DIR$/Book.cpp" />
+        <option value="$PROJECT_DIR$/Book.h" />
         <option value="$PROJECT_DIR$/Library.cpp" />
       </list>
     </option>
@@ -180,6 +208,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RunDashboard">
@@ -212,12 +241,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528501281615</updated>
-      <workItem from="1528501297436" duration="108745000" />
+      <workItem from="1528501297436" duration="142040000" />
     </task>
+    <task id="LOCAL-00001" summary="@2h adding additional feature in Library.h, Library.cpp and main.cpp">
+      <created>1528819392645</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1528819392645</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108745000" />
+    <option name="totallyTimeSpent" value="142040000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -230,20 +267,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1602" height="881" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914925" />
-      <window_info anchor="bottom" id="Messages" sideWeight="0.49904883" weight="0.32914925" />
+      <window_info anchor="bottom" id="Messages" sideWeight="0.49461" weight="0.32914925" />
       <window_info anchor="bottom" id="CMake" weight="0.32914925" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.5015853" side_tool="true" weight="0.32635984" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49841473" visible="true" weight="0.32635984" />
+      <window_info anchor="bottom" id="Event Log" sideWeight="0.10209258" side_tool="true" weight="0.13668062" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.89790744" visible="true" weight="0.34867504" />
       <window_info anchor="bottom" id="Version Control" weight="0.32914925" />
       <window_info anchor="bottom" id="Terminal" weight="0.32914925" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15028535" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15028535" />
       <window_info anchor="bottom" id="TeamCity" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39748955" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49904883" weight="0.39748955" />
       <window_info id="Favorites" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -254,23 +290,23 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.32985657" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.89790744" visible="true" weight="0.32635984" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.150625" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15028535" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="12" />
+      <window_info anchor="bottom" id="TODO" order="12" weight="0.32914925" />
       <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.39895698" />
+      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49904883" weight="0.39748955" />
       <window_info anchor="bottom" id="TeamCity" order="0" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.32985657" />
-      <window_info anchor="bottom" id="Terminal" order="2" />
-      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="1" sideWeight="0.49461" weight="0.32914925" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32914925" />
+      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.10209258" side_tool="true" weight="0.32635984" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32914925" />
       <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="CMake" order="5" />
+      <window_info anchor="bottom" id="CMake" order="5" weight="0.32914925" />
       <window_info id="Favorites" order="0" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -307,24 +343,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="@2h adding additional feature in Library.h, Library.cpp and main.cpp" />
-    <option name="LAST_COMMIT_MESSAGE" value="@2h adding additional feature in Library.h, Library.cpp and main.cpp" />
+    <MESSAGE value="@2h using Regular expression library &lt;regex&gt; for pattern matching inLibrary.cpp and adding proper comments on methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="@2h using Regular expression library &lt;regex&gt; for pattern matching inLibrary.cpp and adding proper comments on methods" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>15</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>63</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -341,6 +370,13 @@
       </expression>
       <expression>
         <expression-string>book1</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>book response = false</expression-string>
         <language-id>ObjectiveC</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -374,78 +410,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Subscriber.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-35">
-          <caret line="22" column="58" selection-start-line="22" selection-start-column="58" selection-end-line="22" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Subscriber.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#91#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Borrow.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding>
-            <element signature="e#84#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Book.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="43" column="33" lean-forward="true" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-          <folding>
-            <element signature="e#38#57#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Borrow.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Book.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="32" column="100" selection-start-line="32" selection-start-column="100" selection-end-line="32" selection-end-column="100" />
-          <folding>
-            <element signature="e#148#167#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="181" column="33" selection-start-line="181" selection-start-column="33" selection-end-line="181" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -456,13 +424,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/6/bits/basic_string.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5074" selection-start-line="5074" selection-end-line="5074" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/6/bits/char_traits.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="262" selection-start-line="262" selection-end-line="262" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Borrow.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Borrow.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#140#157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+        <state relative-caret-position="-1080">
+          <caret column="54" selection-start-column="54" selection-end-column="54" />
           <folding>
-            <element signature="e#200#219#0" expanded="true" />
+            <element signature="e#329#348#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Subscriber.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Subscriber.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="92" column="2" selection-start-line="92" selection-start-column="2" selection-end-line="92" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Book.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="e#409#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Book.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="133" column="36" selection-start-line="133" selection-start-column="36" selection-end-line="133" selection-end-column="36" />
         </state>
       </provider>
     </entry>

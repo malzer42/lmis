@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <memory>
+#include <regex>
 #include "Subscriber.h"
 #include "Book.h"
 #include "Borrow.h"
@@ -36,9 +37,19 @@ public:
 
 	void addSubscriber(Subscriber& subscriber);
 	void removeSubscriber(const std::string& id);
+	// TODO: void sortSubscriber()const;
+	// TODO: void swapSubscriber(Subscriber& sub1, Subscriber& sub2)const;
 
 	void addBook(Book& book);
 	void removeBook(const std::string& quote);
+
+	// TODO: void sortBook()const;
+	// TODO: void swapBook(Book& book1, Book& book2)const;
+	// TODO: void searchTitle(const std::string& value);
+	// TODO: void searchQuote(const std::string& book_quote);
+	// TODO: bool borrowBook(const std::string& subscriber_id, const std::string& book_quote, unsigned short returnDate);
+	// TODO: bool returnBook(const std::string& subscriber_id, const std::string& book_quote);
+	// TODO: void infoSubscriber(const std::string& subscriber_id);
 	void print()const;
 
 	//void addBook(Book book);

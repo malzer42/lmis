@@ -1,6 +1,11 @@
-// Borrow.h: Header for the definition of the class Borrow
-// Created by pam on 10/06/18.
-//
+// Borrow.h: Header for the definition of the class Borrow.
+// Author(s): Pierre Abraham Mulamba.
+// Date of creation (modification): 2018/06/10 (2018/06/12).
+// Description: The class Borrow is an aggregation of two classes --Subscriber and Book. It defines a Borrow interface and representation
+// Usage: To create an instance of a Borrow.
+// Compilation: Makefile provided.
+// Run: Include as a header file
+
 
 #ifndef LMIS_BORROW_H
 #define LMIS_BORROW_H
@@ -11,7 +16,8 @@
 #include "Book.h"
 
 class Borrow {
-public:
+public: // Interface
+
 	Borrow(const std::shared_ptr<Subscriber>& subscriber, const std::shared_ptr<Book>& book, unsigned short returnDate);
 	Borrow(const Borrow& borrow); // Copy ctor
 	Borrow(Borrow&& borrow) noexcept ; // Move ctor
@@ -29,10 +35,14 @@ public:
 	unsigned short getReturnDate() const;
 	void setReturnDate(unsigned short returnDate);
 
-private:
-	std::shared_ptr<Subscriber> subscriber_;
-	std::shared_ptr<Book> book_;
-	unsigned short returnDate_;
+	// TODO: void print()const;
+	// TODO: void repr()const;
+	// TODO: void str()const;
+
+private: // Representation
+	std::shared_ptr<Subscriber> subscriber_; // e.g std::shared_ptr<Subscriber> subscriber_ = std::make_shared<Subscriber>("102013", "Pierre", "Mulamba", 94)
+	std::shared_ptr<Book> book_; // e.g. std::shared_ptr<Book> book_ = std::make_shared<Book>("QA203", "The Big C++", 2011, 8, 3)
+	unsigned short returnDate_; // e.g. 20180612
 };
 
 

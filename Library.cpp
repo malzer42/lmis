@@ -74,26 +74,27 @@ Library::~Library() {
 // param[out]: void
 void Library::addSubscriber(Subscriber& subscriber)
 {
-	bool response = false;
+	std::regex pattern(subscriber.getId());
+	bool isPresent = true;
 	if(nSubscribers_ == 0){
 		subscribers_[nSubscribers_++] = &subscriber;
 		std::cout << "Subscriber: #" << subscriber.getId() << " added successfully!\n";
 	}
 	else{
-		response = true;
+		isPresent = false;
 		// Loop to check an existing subscriber in the system
-		for (int i = 0; i < nSubscribers_ && response ; ++i) {
-			if(subscriber.getId() == subscribers_[i]->getId()){
+		for (int i = 0; i < nSubscribers_; ++i) {
+			if (regex_match(subscribers_[i]->getId(), pattern)) {
 				std::cout << "!!! Subscriber: #" << subscriber.getId() << " failed!!!\n";
 				std::cout << subscriber.getFirstName() << ", " << subscriber.getLastName()<<". Already exit in the Library!!!\n";
-				response = false;
+				isPresent = true;
 				break;
 			}
 		}
 	}
 
 	// Add a subscriber if he does not exist in the system
-	if(response && (nSubscribers_ < MAX_SUB) ){
+	if ((!isPresent) && (nSubscribers_ < MAX_SUB)) {
 		subscribers_[nSubscribers_++] = &subscriber;
 		std::cout << "Subscriber: #" << subscriber.getId() << " added successfully!\n";
 	}
@@ -103,9 +104,10 @@ void Library::addSubscriber(Subscriber& subscriber)
 // method to remove an instance of a Subscriber to a Library based on the id of a subscriber
 // param[in]: id (string)
 // param[out]: void
-void Library::removeSubscriber(const std::string& id) {
+void Library::removeSubscriber(const std::string &id) {
+	std::regex pattern(id);
 	for (int i = 0; i < nSubscribers_; i++) {
-		if( id == subscribers_[i]->getId()){
+		if (regex_match(subscribers_[i]->getId(), pattern)) {
 			for (int j = i; j < nSubscribers_ ; j++) {
 				subscribers_[j] = subscribers_[j+1];
 			}
@@ -119,27 +121,28 @@ void Library::removeSubscriber(const std::string& id) {
 // method to add an instance of a Book to the library
 // param[in]: book (Book)
 // param[out]: void
-void Library::addBook(Book& book) {
-	bool response = false;
+void Library::addBook(Book &book) {
+	std::regex pattern(book.getQuote());
+	bool isPresent = true;
 	if(nBooks_ == 0){
 		books_[nBooks_++] = &book;
 		std::cout << "Book: " << book.getQuote() << " added successfully!\n";
 	}
 	else{
-		response = true;
+		isPresent = false;
 		// Loop to check an existing book in the system
-		for (int i = 0; i < nBooks_ && response ; ++i) {
-			if(book.getQuote() == books_[i]->getQuote()){
+		for (int i = 0; i < nBooks_; ++i) {
+			if (regex_match(books_[i]->getQuote(), pattern)) {
 				std::cout << "!!! Book: " << book.getQuote() << " failed!!!\n";
 				std::cout << book.getQuote() << ", " << book.getTitle()<<". Already exit in the Library!!!\n";
-				response = false;
+				isPresent = true;
 				break;
 			}
 		}
 	}
 
 	// Add an instance of a book if it does not exist in the system
-	if(response && (nBooks_ < MAX_BOOK) ){
+	if ((!isPresent) && (nBooks_ < MAX_BOOK)) {
 		books_[nBooks_++] = &book;
 		std::cout << "Book: " << book.getQuote() << " added successfully!\n";
 	}
@@ -149,6 +152,17 @@ void Library::addBook(Book& book) {
 // param[in]: quote (string)
 // parm[out]: void
 void Library::removeBook(const std::string &quote) {
+	std::regex pattern(quote);
+	for (int i = 0; i < nBooks_; i++) {
+		if (regex_match(books_[i]->getQuote(), pattern)) {
+			for (int j = i; j < nBooks_; j++) {
+				books_[j] = books_[j + 1];
+			}
+			books_[nBooks_ - 1] = nullptr;
+			nBooks_--;
+			continue;
+		}
+	}
 
 }
 
