@@ -11,18 +11,19 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 
 class Subscriber {
 public:
 	// Ctor
-	Subscriber(const std::string &id="", const std::string &firstName="", const std::string &lastName="", unsigned short age=0);
+	Subscriber(const std::string &id = "", const std::string &firstName = "", const std::string &lastName = "", unsigned int age = 0);
 	Subscriber(const Subscriber& subscriber);  // Copy ctor
 	Subscriber(Subscriber &&subscriber)noexcept; // Move ctor
 	Subscriber& operator=(const Subscriber& subscriber); //! Copy assignment operator
 	Subscriber &operator=(Subscriber &&subscriber)noexcept;// noexcept; //! Move assignment operator
 
 	// Exception
-	class BadSubscriber{
+	class BadSubscriber : public std::exception {
 	public:
 		const std::string exceptionMsg = "BadSubscriberError: Unable to create an instance of the class Subscriber\n";
 
@@ -32,11 +33,10 @@ public:
 
 	// Accessors or Getters
 	const std::string &getId() const;
-
 	const std::string &getFirstName() const;
-
 	const std::string &getLastName() const;
-	unsigned short getAge() const;
+
+	unsigned int getAge() const;
 
 	// Mutators or Setters
 	void setId(const std::string &id);
@@ -44,7 +44,8 @@ public:
 	void setFirstName(const std::string &firstName);
 
 	void setLastName(const std::string &lastName);
-	void setAge(unsigned short age);
+
+	void setAge(unsigned int age);
 
 	// Printing method
 	void print()const ; // The actual printing method
@@ -55,7 +56,7 @@ private:
 	std::string id_; // e.g. "1839456"
 	std::string firstName_; // e.g. "John"
 	std::string lastName_; // e.g. "Doe"
-	unsigned short age_; // e.g. 39
+	unsigned int age_; // e.g. 39
 };
 
 

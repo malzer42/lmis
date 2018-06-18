@@ -10,14 +10,14 @@
 
 
 // Ctor
-// params[in]: quote(string), title(string), year(unsigned short), minReaderAge(unsigned short), nPosses(unsigned short)
+// params[in]: quote(string), title(string), year(unsigned int), minReaderAge(unsigned int), nPosses(unsigned int)
 // param[out]: void
-Book::Book(const std::string &quote, const std::string &title, unsigned short year, unsigned short minReaderAge, unsigned short nPossess) :
+Book::Book(const std::string &quote, const std::string &title, unsigned int year, unsigned int minReaderAge, unsigned int nPossess) :
 		quote_(quote), title_(title), year_(year), minReaderAge_(minReaderAge), nPossess_(nPossess) {
 
-
+	nAvailables_ = 0;
 	if(minReaderAge_ < 0 ) throw Book::BadBook();
-	nAvailables_ = 1000;
+	nAvailables_ = nPossess_;
 
 }
 
@@ -26,7 +26,9 @@ Book::Book(const std::string &quote, const std::string &title, unsigned short ye
 // param[out]: void
 Book::Book(const Book& book) : quote_(book.getQuote()), title_(book.getTitle()), year_(book.getYear()),
                                minReaderAge_(book.getMinReaderAge()), nPossess_(book.getNPossess()),
-                               nAvailables_(book.getNAvailables()){}
+                               nAvailables_(book.getNAvailables()) {
+
+}
 // Move ctor
 // param[in]: book(Book)
 // param[out]: void
@@ -93,12 +95,6 @@ Book& Book::operator=(Book&& book) noexcept
 	return *this;
 }
 
-// Dtor
-// param[in]: void
-// param[out]: void
-//Book::~Book() {
-//
-//}
 
 // Accessors and Mutators
 
@@ -133,57 +129,57 @@ void Book::setTitle(const std::string &title) {
 
 // method getYear()const
 // param[in]: void
-// param[out]: year_ (unsigned short)
-unsigned short Book::getYear() const {
+// param[out]: year_ (unsigned int)
+unsigned int Book::getYear() const {
 	return year_;
 }
 
 // method setYear(year)
-// param[in]: year(unsigned short)
+// param[in]: year(unsigned int)
 // param[out]: void
-void Book::setYear(unsigned short year) {
+void Book::setYear(unsigned int year) {
 	year_ = year;
 }
 
 // method getMinReadearAge()const
 // param[in]: void
-// param[out]: minReaderAge_ (unsigned short)
-unsigned short Book::getMinReaderAge() const {
+// param[out]: minReaderAge_ (unsigned int)
+unsigned int Book::getMinReaderAge() const {
 	return minReaderAge_;
 }
 
 // method setMinReaderAge(minReaderAge)
-// param[in]: minReaderAge(unsigned short)
+// param[in]: minReaderAge(unsigned int)
 // param[out]: void
-void Book::setMinReaderAge(unsigned short minReaderAge) {
+void Book::setMinReaderAge(unsigned int minReaderAge) {
 	minReaderAge_ = minReaderAge;
 }
 
 // method getNPossess()const
 // param[in]: void
-// param[out]: nPossess_ (unsigned short)
-unsigned short Book::getNPossess() const {
+// param[out]: nPossess_ (unsigned int)
+unsigned int Book::getNPossess() const {
 	return nPossess_;
 }
 
 // method setNPossess(nPossess)
-// param[in]: nPossess(unsigned short)
+// param[in]: nPossess(unsigned int)
 // param[out]: void
-void Book::setNPossess(unsigned short nPossess) {
+void Book::setNPossess(unsigned int nPossess) {
 	nPossess_ = nPossess;
 }
 
 // method getNAvailables()const
 // param[in]: void
-// param[out]: nAvailables_ (unsigned short)
-unsigned short Book::getNAvailables() const {
+// param[out]: nAvailables_ (unsigned int)
+unsigned int Book::getNAvailables() const {
 	return nAvailables_;
 }
 
 // method setNAvailables(nAvailables)
-// param[in]: nAvailables(unsigned short)
+// param[in]: nAvailables(unsigned int)
 // param[out]: void
-void Book::setNAvailables(unsigned short nAvailables) {
+void Book::setNAvailables(unsigned int nAvailables) {
 	nAvailables_ = nAvailables;
 }
 

@@ -11,19 +11,20 @@
 
 #include <iostream>
 #include <string>
+#include <exception>
 
 class Book {
 public: // Interface
 
-	Book(const std::string &quote = "", const std::string &title = "", unsigned short year = 0,
-			unsigned short minReaderAge = 0, unsigned short nPossess = 0); // Ctor
+	Book(const std::string &quote = "", const std::string &title = "", unsigned int year = 0,
+	     unsigned int minReaderAge = 0, unsigned int nPossess = 0); // Ctor
 	Book(const Book& book); // Copy ctor
 	Book(Book&& book) noexcept ; // Move ctor
 	Book& operator=(const Book& book); // Copy assignment
 	Book& operator=(Book&& book) noexcept ;// Move assignment
 
 	// Exception
-	class BadBook{
+	class BadBook : public std::exception {
 	public:
 		const std::string exceptionMsg = "BadBookError: Unable to create an instance of the class Book\n";
 	};
@@ -36,14 +37,22 @@ public: // Interface
 	void setQuote(const std::string &quote);
 	const std::string &getTitle() const;
 	void setTitle(const std::string &title);
-	unsigned short getYear() const;
-	void setYear(unsigned short year);
-	unsigned short getMinReaderAge() const;
-	void setMinReaderAge(unsigned short minReaderAge);
-	unsigned short getNPossess() const;
-	void setNPossess(unsigned short nPossess);
-	unsigned short getNAvailables() const;
-	void setNAvailables(unsigned short nAvailables);
+
+	unsigned int getYear() const;
+
+	void setYear(unsigned int year);
+
+	unsigned int getMinReaderAge() const;
+
+	void setMinReaderAge(unsigned int minReaderAge);
+
+	unsigned int getNPossess() const;
+
+	void setNPossess(unsigned int nPossess);
+
+	unsigned int getNAvailables() const;
+
+	void setNAvailables(unsigned int nAvailables);
 
 	// Printing methods
 	void print()const;
@@ -53,10 +62,10 @@ public: // Interface
 private: // Representation
 	std::string quote_; // e.g. "GA203"
 	std::string title_; // e.g. "The C++ Programming Language"
-	unsigned short year_; // e.g 2011
-	unsigned short minReaderAge_; // e.g. 8
-	unsigned short nPossess_; // 2
-	unsigned short nAvailables_; // 200
+	unsigned int year_; // e.g 2011
+	unsigned int minReaderAge_; // e.g. 8
+	unsigned int nPossess_; // 2
+	unsigned int nAvailables_; // 200
 };
 
 

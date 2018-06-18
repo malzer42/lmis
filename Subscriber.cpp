@@ -11,11 +11,11 @@
 // Ctor
 // params[in]: id(string), firstName(string), lastName(string), Age(unsigned short)
 // param[out]: void
-Subscriber::Subscriber(const std::string &id, const std::string &firstName, const std::string &lastName, unsigned short age) :
+Subscriber::Subscriber(const std::string &id, const std::string &firstName, const std::string &lastName, unsigned int age) :
 		id_(id), firstName_(firstName), lastName_(lastName), age_(age){
 
-	const unsigned short min_age = 6;
-	const unsigned short max_age = 100;
+	const unsigned int min_age = 6;
+	const unsigned int max_age = 100;
 	if(age < min_age || max_age < age) throw Subscriber::BadSubscriber();
 
 }
@@ -84,14 +84,6 @@ Subscriber &Subscriber::operator=(Subscriber &&subscriber)noexcept
 	return *this;
 }
 
-// Dtor
-// param[in]: void
-// param[out]: void
-//Subscriber::~Subscriber() = default
-//{
-// Nothing to be done!
-//}
-
 
 // Accessors or Getters
 
@@ -119,7 +111,7 @@ const std::string &Subscriber::getLastName() const {
 // method getId()const
 // param[in]: void
 // param[out]: age_ (unsigned short)
-unsigned short Subscriber::getAge() const {
+unsigned int Subscriber::getAge() const {
 	return age_;
 }
 
@@ -149,7 +141,7 @@ void Subscriber::setLastName(const std::string &lastName) {
 // method setAge(unsigned short age)
 // param[in]: age (unsigned short)
 // param[out]: void
-void Subscriber::setAge(unsigned short age) {
+void Subscriber::setAge(unsigned int age) {
 	age_ = age;
 }
 
