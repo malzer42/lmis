@@ -158,21 +158,21 @@ int main(int argc, char *argv[]) {
 		if (library.borrowBook("1630236", "BD302", 160204)) {
 			std::cout << "BD302 borrowed by 1630236\n";
 		} else {
-			std::cout << "!!!Borrowing failed!!!\n";
+			std::cout << "!!!Borrowing of the Book BD302 by 1630236 failed!!!\n";
 		}
 
-		// Ne devrait pas marcher car le livre n'est pas disponible
+		// Should not work because the book is not available anymore
 		if (library.borrowBook("1839456", "BD302", 160204)) {
 			std::cout << "BD302 borrowed by 1839456\n";
 		} else {
-			std::cout << "!!!Failed borrowing!!!\n";
+			std::cout << "!!!Borrowing of the Book BD302 by the Subscriber 1839456 failed because the book is not available!!!\n";
 		}
 
 		// Shoud not work because the subscriber has the book
 		if (library.borrowBook("1630236", "BD302", 160204)) {
 			std::cout << "BD302 borrowed by 1630236\n";
 		} else {
-			std::cout << "!!!Borrowing failed!!!\n";
+			std::cout << "!!!Borrowing of the Book BD302 by the Subscriber 1630236 failed because the Subscriber has the book!!!\n";
 		}
 
 		// Should work
@@ -182,42 +182,39 @@ int main(int argc, char *argv[]) {
 			std::cout << "!!!Borrowing failed!!!\n";
 		}
 
-		// Ne devrait pas marcher car l'abonn� a atteint la limite de pr�ts
+		// Should not work because the subscriber has reached the limit of books to borrow
 		if (library.borrowBook("1630236", "QA203", 160204)) {
-			std::cout << "BD302 borrowed by 1630236\n";
+			std::cout << "QA203 borrowed by 1630236\n";
 		} else {
-			std::cout << "!!!Borrowing failed!!!\n";
+			std::cout << "!!!Borrowing of the Book QA203 failed because the Subscriber 1630236 has reached the limit allowed !!!\n";
 		}
 
 		std::cout << "\nINFO ABONNE AVANT RETOUR";
-		//library.infoSubscriber("1630236");
+		library.infoSubscriber("1630236");
 
 		std::cout << "\nTESTS ON BOOK RETURN\n";
-		// // Devrait marcher
-		if (library.returnBook("1630236", "BD302")) {
-			std::cout << "BD302 return by 1630236\n";
+		// should work
+		if (library.returnBook("1630236", "QA204")) {
+			std::cout << "QA204 return by 1630236\n";
 		} else {
-			std::cout << "!!!Failed return!!!\n";
+			std::cout << "!!!Returning of BD302 by 1630236 Failed!!!\n";
 		}
-		// Ne devrait pas marcher car l'abonn� n'a jamais fait ce pr�t
+		// Should not work because the subscriber never borrowed a book
 		if (library.returnBook("1839456", "QA203")) {
 			std::cout << "QA203 return by 1839456\n";
 		} else {
-			std::cout << "!!!Failed retun\n";
+			std::cout << "!!!Returnin of QA203 by 1839456 Failed because the Subscriber never borrowed that book!!!\n";
 		}
 
 		std::cout << "\nINFO ABONNE APRES RETOUR\n";
-		//library.infoSubscriber("1630236");
+		library.infoSubscriber("1630236");
 		/*******************************/
 		/*       FIN DES TESTS         */
 		/*******************************/
 
-		// // Liberer les ressources si il le faut
-		// // A COMPLETER...
+		// Free dynamically allocated memory (the heap) if necessary
 
-
-
-
+		std::cout << "\nEND OF TESTS\n";
 		std::cout << "\nProgram Ended Successfully!\n\n";
 
 		auto end = clock();

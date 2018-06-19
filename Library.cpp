@@ -111,7 +111,7 @@ void Library::removeSubscriber(const std::string &id) {
 	} else {
 		std::regex pattern(id);
 		for (int i = 0; i < nSubscribers_; i++) {
-			if (regex_match(subscribers_[i]->getId(), pattern)) {
+			if (subscribers_[i]->getId() == id) {
 				for (int j = i; j < nSubscribers_; j++) {
 					subscribers_[j] = subscribers_[j + 1];
 				}
@@ -290,7 +290,10 @@ void Library::sortSubscriber(unsigned int option) {
 // params[in]: sub1 (Subscriber&)m sub2 (Subscriber&)
 // param[out]: void
 void Library::swapSubscriber(Subscriber &sub1, Subscriber &sub2) {
-	std::swap(sub1, sub2);
+	Subscriber tmp = sub1;
+	sub1 = sub2;
+	sub2 = tmp;
+	//std::swap(sub1, sub2);
 }
 
 void Library::sortBook(unsigned int option) {
@@ -357,7 +360,10 @@ void Library::sortBook(unsigned int option) {
 // params[in]: book1 (Book&), book2 (Book&)
 // param[out]: void
 void Library::swapBook(Book &book1, Book &book2) {
-	std::swap(book1, book2);
+	Book tmp = book1;
+	book1 = book2;
+	book2 = book1;
+	//std::swap(book1, book2);
 }
 
 
@@ -377,9 +383,9 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 	// 1. Checking that the book is available
 	bool isAvailable = false;
 	int indexBook = 0;
-	for (int j = 0; j < nBooks_; j++) {
-		if (books_[j]->getQuote() == book_quote && books_[j]->getNAvailables() > 0) {
-			indexBook = j; // index found
+	for (int i = 0; i < nBooks_; i++) {
+		if (books_[i]->getQuote() == book_quote && books_[i]->getNAvailables() > 0) {
+			indexBook = i; // index found
 			isAvailable = true; // book is available
 			break;
 		}
@@ -398,8 +404,8 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 
 	// 3. Checking that the subscriber has the book
 	bool hasBook = false;
-	for (int k = 0; k < nBorrows_; k++) {
-		if (borrows_[k]->getSubscriber()->getId() == subscriber_id && borrows_[k]->getBook()->getQuote() == book_quote) {
+	for (int i = 0; i < nBorrows_; i++) {
+		if (borrows_[i]->getSubscriber()->getId() == subscriber_id && borrows_[i]->getBook()->getQuote() == book_quote) {
 			hasBook = true; // the subscriber has a book
 			break;
 		}
@@ -409,10 +415,10 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 	const unsigned int N_MAX_BORROW = 2;
 	unsigned int counter = 0;
 	bool hasExceedLimit = false;
-	for (int j = 0; j < nBorrows_; j++) {
-		if (borrows_[j]->getSubscriber()->getId() == subscriber_id) {
+	for (int i = 0; i < nBorrows_; i++) {
+		if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
 			counter += 1;
-			if (counter > N_MAX_BORROW) {
+			if (counter >= N_MAX_BORROW) {
 				hasExceedLimit = true;
 				break;
 			}
@@ -450,22 +456,22 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 // param[out]: isReturned (bool)
 bool Library::returnBook(const std::string &subscriber_id, const std::string &book_quote) {
 	bool isReturned = false;
-	std::regex patternSub(subscriber_id);
-	std::regex patternBook(book_quote);
 
-	for (int i = 0; i < nBorrows_; ++i) {
-		if (regex_match(borrows_[i]->getSubscriber()->getId(), patternSub) && regex_match(borrows_[i]->getBook()->getQuote(), patternBook)) {
-			//delete borrows_[i];
-			borrows_[i] = nullptr;
-			isReturned = true;
+	for (int i = 0; i < nBorrows_; i++) {
+		if (borrows_[i]->getSubscriber()->getId() == subscriber_id && borrows_[i]->getBook()->getQuote() == book_quote) {
+			for (int j = 0; j < nBorrows_; j++) {
+				borrows_[j] = borrows_[j + 1];
+			}
+			borrows_[nBorrows_ - 1] = nullptr;
 			nBorrows_--;
+			isReturned = true;
 			break;
 		}
 	}
 
-	for (int j = 0; j < nBooks_; ++j) {
-		if (regex_match(books_[j]->getQuote(), patternBook) && isReturned) {
-			books_[j]->setNAvailables(books_[j]->getNAvailables() + 1);
+	for (int i = 0; i < nBooks_; i++) {
+		if (books_[i]->getQuote() == book_quote && isReturned) {
+			books_[i]->setNAvailables(books_[i]->getNAvailables() + 1);
 		}
 	}
 
@@ -480,7 +486,7 @@ void Library::print() const {
 
 	std::cout << "\nPrinting Subscribers\n";
 	if(0 < nSubscribers_ && nSubscribers_ < MAX_SUB){
-		for (int i = 0; i <nSubscribers_ ; ++i) {
+		for (int i = 0; i < nSubscribers_; i++) {
 			std::cout << i << " : ";
 			subscribers_[i]->print();
 		}
@@ -493,9 +499,9 @@ void Library::print() const {
 
 	std::cout << "\nPrinting Books\n";
 	if(0 < nBooks_ && nBooks_ < MAX_BOOK){
-		for (int j = 0; j < nBooks_ ; ++j) {
-			std::cout << j << " : ";
-			books_[j]->print();
+		for (int i = 0; i < nBooks_; i++) {
+			std::cout << i << " : ";
+			books_[i]->print();
 		}
 	}
 	else{
@@ -505,7 +511,7 @@ void Library::print() const {
 
 	std::cout << "\nPrinting Borrows\n";
 	if (0 < nBorrows_ && nBorrows_ < MAX_BORROW) {
-		for (int i = 0; i < nBorrows_; ++i) {
+		for (int i = 0; i < nBorrows_; i++) {
 			std::cout << i << " : ";
 			borrows_[i]->print();
 		}
@@ -518,17 +524,17 @@ void Library::print() const {
 
 void Library::infoSubscriber(const std::string &subscriber_id) const {
 	std::cout << "\nInformation on a Subscriber: \n";
-	std::regex pattern(subscriber_id);
-	for (int i = 0; i < nSubscribers_; ++i) {
-		if (regex_match(subscribers_[i]->getId(), pattern)) {
-			subscribers_[i]->print();
+
+	for (int i = 0; i < nBorrows_; i++) {
+		if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
+			borrows_[i]->getSubscriber()->print();
 			break;
 		}
 	}
 
-	for (int j = 0; j < nBorrows_; ++j) {
-		if (regex_match(borrows_[j]->getSubscriber()->getId(), pattern)) {
-			borrows_[j]->print();
+	for (int i = 0; i < nBorrows_; i++) {
+		if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
+			borrows_[i]->print();
 		}
 	}
 

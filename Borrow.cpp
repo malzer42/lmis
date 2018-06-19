@@ -111,7 +111,7 @@ void Borrow::setReturnDate(unsigned int returnDate) {
 // param[in]: void
 // param[out]: void
 void Borrow::print() const {
-	std::cout << "Subscriber #" << subscriber_->getId() << ". BooK " << book_->getQuote() << ". Return date " << returnDate_ << ".\n";
+	std::cout << "Subscriber #" << getSubscriber()->getId() << ". Book " << getBook()->getQuote() << ". Return date " << getReturnDate() << ".\n";
 }
 
 // method reprt() const

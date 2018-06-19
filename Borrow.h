@@ -29,21 +29,13 @@ public: // Interface
 
 	// Accessors and Mutators
 	const std::shared_ptr<Subscriber> &getSubscriber() const;
-
 	void setSubscriber(const std::shared_ptr<Subscriber> &subscriber);
-
 	const std::shared_ptr<Book> &getBook() const;
-
 	void setBook(const std::shared_ptr<Book> &book);
-
 	unsigned int getReturnDate() const;
-
 	void setReturnDate(unsigned int returnDate);
-
 	void print() const;
-
 	void repr() const;
-
 	void str() const;
 
 private: // Representation

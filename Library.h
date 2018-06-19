@@ -13,9 +13,9 @@
 #include <iostream>
 #include <stdexcept>
 #include <exception>
-#include <utility>
-#include <memory>
-#include <regex>
+//#include <utility> // std::swap in C++11, <algorithm> in C++98
+#include <memory> // std::shared_ptr, std::make_shared<Type>
+#include <regex> // std::regex, std::regex_match, std::regex_search, std::regex_replace
 #include "Subscriber.h"
 #include "Book.h"
 #include "Borrow.h"
@@ -38,28 +38,23 @@ public:
 	};
 	virtual ~Library(); // Dtor
 
+	// Processing subscribers in the library
 	void addSubscriber(Subscriber& subscriber);
 	void removeSubscriber(const std::string& id);
-
 	void sortSubscriber(unsigned int option);
-
 	void swapSubscriber(Subscriber &sub1, Subscriber &sub2);
 
+	// Processing books in the library
 	void addBook(Book& book);
 	void removeBook(const std::string& quote);
-
 	void sortBook(unsigned int option);
-
 	void swapBook(Book &book1, Book &book2);
 
+	// Searching, borrowing, returning, displaying methods
 	void searchTitle(const std::string &str);
-
 	void searchQuote(const std::string &book_quote);
-
 	bool borrowBook(const std::string &subscriber_id, const std::string &book_quote, unsigned int returnDate);
-
 	bool returnBook(const std::string &subscriber_id, const std::string &book_quote);
-
 	void infoSubscriber(const std::string &subscriber_id) const;
 
 	void print()const;
