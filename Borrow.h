@@ -18,7 +18,7 @@
 class Borrow {
 public: // Interface
 
-	Borrow(const std::shared_ptr<Subscriber> &subscriber, const std::shared_ptr<Book> &book, unsigned int returnDate);
+	Borrow(const std::shared_ptr<Subscriber> &subscriber = {nullptr}, const std::shared_ptr<Book> &book = {nullptr}, unsigned int returnDate = {0});
 	Borrow(const Borrow& borrow); // Copy ctor
 	Borrow(Borrow&& borrow) noexcept ; // Move ctor
 	Borrow& operator=(const Borrow& borrow); // Copy assignment

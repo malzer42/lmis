@@ -5,22 +5,21 @@
 #include "Borrow.h"
 
 Borrow::Borrow(const std::shared_ptr<Subscriber> &subscriber, const std::shared_ptr<Book> &book, unsigned int returnDate) :
-		subscriber_(subscriber), book_(book), returnDate_(returnDate) {}
+		subscriber_{subscriber}, book_{book}, returnDate_{returnDate} {}
 
 
 // Copy ctor
 // param[in]:
 // param[out]:
-Borrow::Borrow(const Borrow& borrow) : subscriber_(borrow.getSubscriber()), book_(borrow.getBook()), returnDate_(borrow.getReturnDate()) {}
+Borrow::Borrow(const Borrow &borrow) : subscriber_{borrow.getSubscriber()}, book_{borrow.getBook()}, returnDate_{borrow.getReturnDate()} {}
 
 // Move ctor
 // param[in]:
 // param[out]:
-Borrow::Borrow(Borrow&& borrow) noexcept : subscriber_(nullptr), book_(nullptr), returnDate_(0)
-{
-	subscriber_ = borrow.getSubscriber();
-	book_ = borrow.getBook();
-	returnDate_ = borrow.getReturnDate();
+Borrow::Borrow(Borrow &&borrow) noexcept : subscriber_{nullptr}, book_{nullptr}, returnDate_{0} {
+	subscriber_ = {borrow.getSubscriber()};
+	book_ = {borrow.getBook()};
+	returnDate_ = {borrow.getReturnDate()};
 
 	borrow.setSubscriber(nullptr);
 	borrow.setBook(nullptr);
@@ -34,9 +33,9 @@ Borrow::Borrow(Borrow&& borrow) noexcept : subscriber_(nullptr), book_(nullptr),
 Borrow& Borrow::operator=(const Borrow& borrow)
 {
 	if(this != &borrow){
-		subscriber_ = borrow.getSubscriber();
-		book_ = borrow.getBook();
-		returnDate_ = borrow.getReturnDate();
+		subscriber_ = {borrow.getSubscriber()};
+		book_ = {borrow.getBook()};
+		returnDate_ = {borrow.getReturnDate()};
 	}
 	return *this;
 }
@@ -46,14 +45,14 @@ Borrow& Borrow::operator=(const Borrow& borrow)
 // param[out]:
 Borrow& Borrow::operator=(Borrow&& borrow) noexcept
 {
-	subscriber_ = nullptr;
-	book_ = nullptr;
-	returnDate_ = 0;
+	subscriber_ = {nullptr};
+	book_ = {nullptr};
+	returnDate_ = {0};
 
 	if(this != &borrow){
-		subscriber_ = borrow.getSubscriber();
-		book_ = borrow.getBook();
-		returnDate_ = borrow.getReturnDate();
+		subscriber_ = {borrow.getSubscriber()};
+		book_ = {borrow.getBook()};
+		returnDate_ = {borrow.getReturnDate()};
 	}
 	return *this;
 }
@@ -76,7 +75,7 @@ const std::shared_ptr<Subscriber> &Borrow::getSubscriber() const {
 // param[in]:
 // param[out]:
 void Borrow::setSubscriber(const std::shared_ptr<Subscriber> &subscriber) {
-	subscriber_ = subscriber;
+	subscriber_ = {subscriber};
 }
 
 // method getBook() const
@@ -90,7 +89,7 @@ const std::shared_ptr<Book> &Borrow::getBook() const {
 // param[in]: book (const std::shared_ptr<Book>& )
 // param[out]: void
 void Borrow::setBook(const std::shared_ptr<Book> &book) {
-	book_ = book;
+	book_ = {book};
 }
 
 // method getRetunDate()
@@ -104,7 +103,7 @@ unsigned int Borrow::getReturnDate() const {
 // param[in]: returnDate
 // param[out]: void
 void Borrow::setReturnDate(unsigned int returnDate) {
-	returnDate_ = returnDate;
+	returnDate_ = {returnDate};
 }
 
 // method print()const
@@ -118,14 +117,14 @@ void Borrow::print() const {
 // param[in]: void
 // param[out]: void
 void Borrow::repr() const {
-
+	std::cout << "Borrow(subscriber_ptr, book_ptr, return_date)\n";
 }
 
 // method str() const
 // param[in]: void
 // param[out]: void
 void Borrow::str() const {
-
+	std::cout << " Subscriber #subscriber_id. Book book_quote. Return date return_date\n";
 }
 
 

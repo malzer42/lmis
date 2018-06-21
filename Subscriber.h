@@ -16,7 +16,7 @@
 class Subscriber {
 public:
 	// Ctor
-	Subscriber(const std::string &id = "", const std::string &firstName = "", const std::string &lastName = "", unsigned int age = 0);
+	Subscriber(const std::string &id = {""}, const std::string &firstName = {""}, const std::string &lastName = {""}, unsigned int age = {0});
 	Subscriber(const Subscriber& subscriber);  // Copy ctor
 	Subscriber(Subscriber &&subscriber)noexcept; // Move ctor
 	Subscriber& operator=(const Subscriber& subscriber); //! Copy assignment operator
@@ -25,8 +25,7 @@ public:
 	// Exception
 	class BadSubscriber : public std::exception {
 	public:
-		const std::string exceptionMsg = "BadSubscriberError: Unable to create an instance of the class Subscriber\n";
-
+		const std::string exceptionMsg = {"BadSubscriberError: Unable to create an instance of the class Subscriber\n"};
 	};
 	// Dtor
 	virtual ~Subscriber() = default;
@@ -35,7 +34,6 @@ public:
 	const std::string &getId() const;
 	const std::string &getFirstName() const;
 	const std::string &getLastName() const;
-
 	unsigned int getAge() const;
 
 	// Mutators or Setters
@@ -55,6 +53,4 @@ private:
 	std::string lastName_; // e.g. "Doe"
 	unsigned int age_; // e.g. 39
 };
-
-
 #endif //LMIS_SUBSCRIBER_H

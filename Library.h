@@ -13,7 +13,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <exception>
-//#include <utility> // std::swap in C++11, <algorithm> in C++98
+#include <utility> // std::swap in C++11, <algorithm> in C++98
 #include <memory> // std::shared_ptr, std::make_shared<Type>
 #include <regex> // std::regex, std::regex_match, std::regex_search, std::regex_replace
 #include "Subscriber.h"
@@ -23,20 +23,25 @@
 
 class Library {
 public:
-	const unsigned int MAX_SUB = 100; // Maximum number of Subscribers
-	const unsigned int MAX_BOOK = 1000; // Maximum number of Books
-	const unsigned int MAX_BORROW = 200; // Maximum number of Borrows
+	const unsigned int MAX_SUB = {100}; // Maximum number of Subscribers
+	const unsigned int MAX_BOOK = {1000}; // Maximum number of Books
+	const unsigned int MAX_BORROW = {200}; // Maximum number of Borrows
 
 	Library(); // Ctor
-	// TODO: Copy ctor --> Library(const Library& library)
-	// TODO: Move ctor --> Library(Library&& library) noexcept
-	// TODO: Copy assignment --> Library& operator=(const Library& library)
-	// TODO: Move assignment --> Library& operator=(Library&& library) noexcept
+	Library(const Library &library);
+
+	Library(Library &&library) noexcept;
+
+	Library &operator=(const Library &library);
+
+	Library &operator=(Library &&library) noexcept;
+
+	virtual ~Library(); // Dtor
+
 	class BadLibrary : public std::exception {
 	public:
-		const std::string exceptionMsg = "BadLibraryError: Unable to process item in the library\n";
+		const std::string exceptionMsg = {"BadLibraryError: Unable to process item in the library\n"};
 	};
-	virtual ~Library(); // Dtor
 
 	// Processing subscribers in the library
 	void addSubscriber(Subscriber& subscriber);
@@ -57,6 +62,8 @@ public:
 	bool returnBook(const std::string &subscriber_id, const std::string &book_quote);
 	void infoSubscriber(const std::string &subscriber_id) const;
 
+	void swapBorrow(Borrow &borrow1, Borrow &borrow2);
+
 	void print()const;
 
 private:
@@ -67,6 +74,4 @@ private:
 	Borrow** borrows_; // Dynamic allocation in ctor of the class Library for pointers of Borrows
 	unsigned int nBorrows_; // number of Borrow instances
 };
-
-
 #endif //LMIS_LIBRARY_H

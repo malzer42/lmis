@@ -209,7 +209,7 @@ int main(int argc, char *argv[]) {
 		std::cout << "\nINFO ABONNE APRES RETOUR\n";
 		library.infoSubscriber("1630236");
 		/*******************************/
-		/*       FIN DES TESTS         */
+		/*       END OF TESTS          */
 		/*******************************/
 
 		// Free dynamically allocated memory (the heap) if necessary

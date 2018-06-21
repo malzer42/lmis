@@ -32,15 +32,68 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80e99f36-da97-4793-b1d6-8d2254e0a681" name="Default" comment="@4h removing the use of regular expression and modifying the file Library.cpp">
-      <change afterPath="$PROJECT_DIR$/test/test_main.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit_tests/subscriber_test/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit_tests/subscriber_test/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit_tests/subscriber_test/Subscriber.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit_tests/subscriber_test/Subscriber.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/unit_tests/subscriber_test/test_Subscriber.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="80e99f36-da97-4793-b1d6-8d2254e0a681" name="Default" comment="@2h Implementing the TODO list in the Library.h et Library.cpp">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/.gitignore.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Book.cpp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Book.h.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Borrow.cpp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Borrow.h.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeCCompiler.cmake.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeCCompilerId.c.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeCXXCompiler.cmake.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeCXXCompilerId.cpp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeCache.txt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeDirectoryInformation.cmake.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeLists.txt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeOutput.log.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CMakeSystem.cmake.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/CXX.includecache.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/DependInfo.cmake.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Library.cpp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Library.h.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Makefile.cmake.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Makefile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Makefile2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Project.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Project_Default.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Subscriber.cpp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/Subscriber.h.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/TargetDirectories.txt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/build.make.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/clion-environment.txt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/clion-log.txt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/cmake.check_cache.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/cmake_clean.cmake.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/cmake_install.cmake.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/codeStyleConfig.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/depend.internal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/depend.make.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/feature_tests.c.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/feature_tests.cxx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/flags.make.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/link.txt.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/lmis.cbp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/lmis.iml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/main.cpp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/misc.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/modules.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/pam.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/progress.make.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/progress.marks.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/vcs.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exportToHTML/workspace.xml.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit_tests/subscriber_test/err" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit_tests/subscriber_test/gmon.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/unit_tests/subscriber_test/test_subscriber" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Book.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Book.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Book.h" beforeDir="false" afterPath="$PROJECT_DIR$/Book.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Borrow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Borrow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Borrow.h" beforeDir="false" afterPath="$PROJECT_DIR$/Borrow.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Library.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.h" beforeDir="false" afterPath="$PROJECT_DIR$/Library.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Subscriber.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriber.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Subscriber.h" beforeDir="false" afterPath="$PROJECT_DIR$/Subscriber.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
@@ -52,6 +105,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Subscriber.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/Subscriber.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/lmis.dir/main.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/lmis" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lmis" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,12 +123,11 @@
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="202" selection-start-line="202" selection-end-line="202" />
+            <state>
               <folding>
                 <element signature="e#329#348#0" expanded="true" />
               </folding>
@@ -82,35 +135,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_Subscriber.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/test_Subscriber.cpp">
+      <file leaf-file-name="Library.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+            <state>
               <folding>
-                <element signature="e#38#55#0" expanded="true" />
+                <element signature="e#423#442#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Subscriber.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/Subscriber.cpp">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Subscriber.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/Subscriber.h">
+      <file leaf-file-name="Library.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-312" />
+            <state relative-caret-position="1235">
+              <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/Makefile">
+      <file leaf-file-name="Subscriber.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Subscriber.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-443">
-              <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+            <state relative-caret-position="2002">
+              <caret line="154" column="98" selection-start-line="154" selection-start-column="98" selection-end-line="154" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -154,20 +203,20 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/BadSubscriber.cpp" />
         <option value="$PROJECT_DIR$/BadSubscriber.h" />
-        <option value="$PROJECT_DIR$/Book.h" />
-        <option value="$PROJECT_DIR$/Book.cpp" />
-        <option value="$PROJECT_DIR$/Library.h" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/Borrow.h" />
-        <option value="$PROJECT_DIR$/Library.cpp" />
-        <option value="$PROJECT_DIR$/Borrow.cpp" />
         <option value="$PROJECT_DIR$/test/test_main.cpp" />
-        <option value="$PROJECT_DIR$/Subscriber.cpp" />
-        <option value="$PROJECT_DIR$/Subscriber.h" />
         <option value="$PROJECT_DIR$/test/unit_tests/subscriber_test/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/test/unit_tests/subscriber_test/test_Subcriber.cpp" />
         <option value="$PROJECT_DIR$/test/unit_tests/subscriber_test/Makefile" />
         <option value="$PROJECT_DIR$/test/unit_tests/subscriber_test/test_Subscriber.cpp" />
+        <option value="$PROJECT_DIR$/Book.h" />
+        <option value="$PROJECT_DIR$/Subscriber.h" />
+        <option value="$PROJECT_DIR$/Book.cpp" />
+        <option value="$PROJECT_DIR$/Borrow.h" />
+        <option value="$PROJECT_DIR$/Subscriber.cpp" />
+        <option value="$PROJECT_DIR$/Borrow.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Library.cpp" />
+        <option value="$PROJECT_DIR$/Library.h" />
       </list>
     </option>
   </component>
@@ -181,11 +230,10 @@
     <packageJsonPaths />
   </component>
   <component name="OCFindUsagesOptions" text="false" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1" />
-    <option name="y" value="-11" />
-    <option name="width" value="1602" />
-    <option name="height" value="881" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="24" />
+    <option name="width" value="1600" />
+    <option name="height" value="845" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -193,6 +241,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -209,12 +258,17 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/pam/dev/cpp/lmis/main.cpp" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/testing/Makefile" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -279,7 +333,8 @@
       <workItem from="1529079300350" duration="22689000" />
       <workItem from="1529176140552" duration="5282000" />
       <workItem from="1529187148178" duration="66075000" />
-      <workItem from="1529435813959" duration="15009000" />
+      <workItem from="1529435813959" duration="18869000" />
+      <workItem from="1529520837679" duration="24591000" />
     </task>
     <task id="LOCAL-00001" summary="@2h adding additional feature in Library.h, Library.cpp and main.cpp">
       <created>1528819392645</created>
@@ -309,11 +364,18 @@
       <option name="project" value="LOCAL" />
       <updated>1529383924580</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="@4 Adding unit tests">
+      <created>1529498198276</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1529498198276</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272925000" />
+    <option name="totallyTimeSpent" value="301376000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -325,19 +387,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-11" width="1602" height="881" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="24" width="1600" height="845" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32914925" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49334177" weight="0.62343097" />
-      <window_info anchor="bottom" id="CMake" order="7" weight="0.32914925" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.10336081" side_tool="true" weight="0.60948396" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32914925" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.89663917" visible="true" weight="0.19246861" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.30125523" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49930266" visible="true" weight="0.29422954" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49334177" weight="0.6226415" />
+      <window_info anchor="bottom" id="CMake" order="11" weight="0.32914925" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.10336081" side_tool="true" weight="0.60948396" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.3280116" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.89663917" weight="0.5065312" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.67085075" />
+      <window_info anchor="right" id="Remote Host" weight="0.32947233" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49930266" visible="true" weight="0.17760618" />
       <window_info anchor="bottom" id="TeamCity" order="7" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32914925" />
       <window_info id="Structure" order="1" sideWeight="0.5006974" side_tool="true" weight="0.15028535" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49904883" weight="0.57880056" />
@@ -347,27 +408,28 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32914925" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Run" order="8" sideWeight="0.89790744" visible="true" weight="0.32635984" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15028535" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.89663917" visible="true" weight="0.42677826" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="12" weight="0.32914925" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Debug" order="9" sideWeight="0.49904883" weight="0.39748955" />
-      <window_info anchor="bottom" id="TeamCity" order="0" />
-      <window_info anchor="bottom" id="Messages" order="1" sideWeight="0.49461" weight="0.32914925" />
-      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32914925" />
-      <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.10209258" side_tool="true" weight="0.32635984" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="4" weight="0.32914925" />
-      <window_info anchor="bottom" id="Find" order="7" />
-      <window_info anchor="bottom" id="CMake" order="5" weight="0.32914925" />
-      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49930266" visible="true" weight="0.17311351" />
+      <window_info id="Structure" order="1" sideWeight="0.5006974" side_tool="true" weight="0.15028535" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32914925" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32914925" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TeamCity" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49904883" weight="0.57880056" />
+      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49334177" weight="0.62343097" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.67085075" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.10336081" side_tool="true" weight="0.60948396" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32914925" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.32914925" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +470,9 @@
     <MESSAGE value="@2h using Regular expression library &lt;regex&gt; for pattern matching inLibrary.cpp and adding proper comments on methods" />
     <MESSAGE value="@4h removing the use of regular expression and modifying the file Library.cpp" />
     <MESSAGE value="@6h fixed the bugs in Library.cpp" />
-    <option name="LAST_COMMIT_MESSAGE" value="@6h fixed the bugs in Library.cpp" />
+    <MESSAGE value="@4 Adding unit tests" />
+    <MESSAGE value="@2h Implementing the TODO list in the Library.h et Library.cpp" />
+    <option name="LAST_COMMIT_MESSAGE" value="@2h Implementing the TODO list in the Library.h et Library.cpp" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -497,10 +561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5447">
           <caret line="419" column="9" lean-forward="true" selection-start-line="419" selection-start-column="9" selection-end-line="419" selection-end-column="9" />
-          <folding>
-            <element signature="e#381#911#0" />
-            <element signature="e#1062#1595#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -534,7 +594,6 @@
           <caret line="52" column="49" lean-forward="true" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
           <folding>
             <element signature="e#423#442#0" expanded="true" />
-            <element signature="e#550#610#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -572,7 +631,6 @@
           <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
           <folding>
             <element signature="e#423#442#0" expanded="true" />
-            <element signature="e#550#610#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -671,23 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Book.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-          <folding>
-            <element signature="e#409#428#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Book.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/6/bits/regex.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -702,45 +743,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
-          <folding>
-            <element signature="e#423#442#0" expanded="true" />
-            <element signature="e#550#610#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1833" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Borrow.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="113" column="85" selection-start-line="113" selection-start-column="85" selection-end-line="113" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Borrow.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Library.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="536" column="23" selection-start-line="536" selection-start-column="23" selection-end-line="536" selection-end-column="23" />
-          <folding>
-            <element signature="e#381#911#0" />
-            <element signature="e#1062#1595#0" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file:///usr/lib/gcc/x86_64-linux-gnu/6/include-fixed/README">
@@ -750,9 +755,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="12" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="16" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,27 +764,10 @@
     <entry file="file://$USER_HOME$/testing/driver.cpp">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Subscriber.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="99" column="19" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Makefile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-468">
           <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Subscriber.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-          <folding>
-            <element signature="e#450#469#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -820,10 +805,13 @@
     <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/err">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/Makefile">
+    <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/test_Subscriber.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-443">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        <state relative-caret-position="208">
+          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+          <folding>
+            <element signature="e#38#55#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -835,20 +823,83 @@
         <state relative-caret-position="-312" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/test_Subscriber.cpp">
+    <entry file="file://$PROJECT_DIR$/test/unit_tests/subscriber_test/Makefile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        <state relative-caret-position="-400">
+          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Subscriber.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="27" column="119" selection-start-line="27" selection-start-column="119" selection-end-line="27" selection-end-column="119" />
           <folding>
-            <element signature="e#38#55#0" expanded="true" />
+            <element signature="e#450#469#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Book.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="177" column="33" lean-forward="true" selection-start-line="177" selection-start-column="33" selection-end-line="177" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Book.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#409#428#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Borrow.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Borrow.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="20" column="144" selection-start-line="20" selection-start-column="144" selection-end-line="20" selection-end-column="144" />
+          <folding>
+            <element signature="e#458#475#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Subscriber.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2002">
+          <caret line="154" column="98" selection-start-line="154" selection-start-column="98" selection-end-line="154" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1235">
+          <caret line="95" column="30" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#423#442#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="202" selection-start-line="202" selection-end-line="202" />
+        <state>
           <folding>
             <element signature="e#329#348#0" expanded="true" />
           </folding>

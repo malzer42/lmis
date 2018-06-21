@@ -16,8 +16,7 @@
 class Book {
 public: // Interface
 
-	Book(const std::string &quote = "", const std::string &title = "", unsigned int year = 0,
-	     unsigned int minReaderAge = 0, unsigned int nPossess = 0); // Ctor
+	Book(const std::string &quote = {""}, const std::string &title = {""}, unsigned int year = {0}, unsigned int minReaderAge = {0}, unsigned int nPossess = {0}); // Ctor
 	Book(const Book& book); // Copy ctor
 	Book(Book&& book) noexcept ; // Move ctor
 	Book& operator=(const Book& book); // Copy assignment
@@ -26,7 +25,7 @@ public: // Interface
 	// Exception
 	class BadBook : public std::exception {
 	public:
-		const std::string exceptionMsg = "BadBookError: Unable to create an instance of the class Book\n";
+		const std::string exceptionMsg = {"BadBookError: Unable to create an instance of the class Book\n"};
 	};
 
 	// Dtor
@@ -37,21 +36,13 @@ public: // Interface
 	void setQuote(const std::string &quote);
 	const std::string &getTitle() const;
 	void setTitle(const std::string &title);
-
 	unsigned int getYear() const;
-
 	void setYear(unsigned int year);
-
 	unsigned int getMinReaderAge() const;
-
 	void setMinReaderAge(unsigned int minReaderAge);
-
 	unsigned int getNPossess() const;
-
 	void setNPossess(unsigned int nPossess);
-
 	unsigned int getNAvailables() const;
-
 	void setNAvailables(unsigned int nAvailables);
 
 	// Printing methods
@@ -67,6 +58,4 @@ private: // Representation
 	unsigned int nPossess_; // 2
 	unsigned int nAvailables_; // 200
 };
-
-
 #endif //LMIS_BOOK_H
