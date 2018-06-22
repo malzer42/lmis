@@ -4,7 +4,7 @@
 
 #include "Borrow.h"
 
-Borrow::Borrow(const std::shared_ptr<Subscriber> &subscriber, const std::shared_ptr<Book> &book, unsigned int returnDate) :
+Borrow::Borrow(Subscriber *subscriber, Book *book, unsigned int returnDate) :
 		subscriber_{subscriber}, book_{book}, returnDate_{returnDate} {}
 
 
@@ -60,35 +60,35 @@ Borrow& Borrow::operator=(Borrow&& borrow) noexcept
 // Dtor
 // param[in]:
 // param[out]:
-//Borrow::~Borrow() {
-//
-//}
+Borrow::~Borrow() {
+
+}
 
 // method
 // param[in]:
 // param[out]:
-const std::shared_ptr<Subscriber> &Borrow::getSubscriber() const {
+Subscriber *Borrow::getSubscriber() const {
 	return subscriber_;
 }
 
 // method
 // param[in]:
 // param[out]:
-void Borrow::setSubscriber(const std::shared_ptr<Subscriber> &subscriber) {
+void Borrow::setSubscriber(Subscriber *subscriber) {
 	subscriber_ = {subscriber};
 }
 
 // method getBook() const
 // param[in]: void
 // param[out]: book_ (const std::shared_ptr<Book>& )
-const std::shared_ptr<Book> &Borrow::getBook() const {
+Book *Borrow::getBook() const {
 	return book_;
 }
 
 // method setBook(const std::shared_ptr<Book>& book)
 // param[in]: book (const std::shared_ptr<Book>& )
 // param[out]: void
-void Borrow::setBook(const std::shared_ptr<Book> &book) {
+void Borrow::setBook(Book *book) {
 	book_ = {book};
 }
 
@@ -126,6 +126,8 @@ void Borrow::repr() const {
 void Borrow::str() const {
 	std::cout << " Subscriber #subscriber_id. Book book_quote. Return date return_date\n";
 }
+
+
 
 
 

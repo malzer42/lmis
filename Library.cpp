@@ -139,6 +139,7 @@ Library::~Library() {
 // param[out]: void
 void Library::addSubscriber(Subscriber& subscriber)
 {
+	std::cout << "Adding: #" << subscriber.getId() << ".\n";
 	bool isPresent = {true};
 	if(nSubscribers_ == 0){
 		subscribers_[nSubscribers_++] = {&subscriber};
@@ -169,16 +170,17 @@ void Library::addSubscriber(Subscriber& subscriber)
 // param[in]: id (string)
 // param[out]: void
 void Library::removeSubscriber(const std::string &subscriber_id) {
+	std::cout << "\nRemoving the Subscriber: " << subscriber_id << ".\n";
 	if (nSubscribers_ <= 0 || MAX_SUB < nSubscribers_) {
 		std::logic_error description("Range_Error-- Could Not Remove the Subscriber");
 		throw;
 	} else {
 		for (int i = 0; i < nSubscribers_; i++) {
 			if (subscribers_[i]->getId() == subscriber_id) {
-				//for (int j = i; j < nSubscribers_; j++) {
-				//	subscribers_[j] = {subscribers_[j + 1]};
-				//}
-				std::swap(subscribers_[i], subscribers_[nSubscribers_ - 1]);
+				for (int j = i; j < nSubscribers_; j++) {
+					subscribers_[j] = {subscribers_[j + 1]};
+				}
+				//std::swap(subscribers_[i], subscribers_[nSubscribers_ - 1]);
 				subscribers_[nSubscribers_ - 1] = {nullptr};
 				nSubscribers_--;
 				continue;
@@ -191,6 +193,7 @@ void Library::removeSubscriber(const std::string &subscriber_id) {
 // param[in]: book (Book)
 // param[out]: void
 void Library::addBook(Book &book) {
+	std::cout << "Adding the book: " << book.getQuote() << ".\n";
 	bool isPresent = {true};
 	if(nBooks_ == 0){
 		books_[nBooks_++] = {&book};
@@ -220,16 +223,17 @@ void Library::addBook(Book &book) {
 // param[in]: quote (string)
 // parm[out]: void
 void Library::removeBook(const std::string &book_quote) {
+	std::cout << "Removing the Book :" << book_quote << "\n\n";
 	if (nBooks_ <= 0 || MAX_BOOK < nBooks_) {
 		std::logic_error description("Range_Error-- Could Not Remove the Book");
 		throw;
 	} else {
-		for (int i = 0; i < nBooks_; i++) {
+		for (int i = 0; i < nBooks_; i++) { // seek and destroy
 			if (books_[i]->getQuote() == book_quote) {
-				//for (int j = i; j < nBooks_; j++) {
-				//	books_[j] = {books_[j + 1]};
-				//}
-				std::swap(books_[i], books_[nBooks_ - 1]);
+				for (int j = i; j < nBooks_; j++) {
+					books_[j] = {books_[j + 1]};
+				}
+				//std::swap(books_[i], books_[nBooks_ - 1]);
 				books_[nBooks_ - 1] = {nullptr};
 				nBooks_--;
 				continue;
@@ -242,13 +246,15 @@ void Library::removeBook(const std::string &book_quote) {
 // param[in]: pattern (const string&)
 // param[out]: void
 void Library::searchTitle(const std::string &str_title) {
+	std::cout << "\nSearching by title...: " << str_title << '\n';
 	if (nBooks_ <= 0 || MAX_BOOK < nBooks_) {
 		std::logic_error description("Range_Error-- Could Not run the searchTitle");
 		throw;
 	} else {
+		std::regex pattern(str_title);
 		bool isFound = {false};
 		for (int i = 0; i < nBooks_; i++) {
-			if (books_[i]->getTitle() == str_title) {
+			if (regex_search(books_[i]->getTitle(), pattern)) {
 				isFound = {true};
 				books_[i]->print();
 			}
@@ -265,6 +271,7 @@ void Library::searchTitle(const std::string &str_title) {
 // param[in]: book_quote (const string)
 // param[out]: void
 void Library::searchQuote(const std::string &book_quote) {
+	std::cout << "Searching by quote...: " << book_quote << '\n';
 	if (nBooks_ <= 0 || MAX_BOOK < nBooks_) {
 		std::logic_error description("Range_Error-- Could Not run the searchQuote");
 		throw;
@@ -277,7 +284,7 @@ void Library::searchQuote(const std::string &book_quote) {
 			}
 		}
 		if (!isFound) {
-			std::cout << "\n!!! Could not find a book with Quote: " << book_quote << "!!!\n";
+			std::cout << "!!! Could not find a book with Quote: " << book_quote << "!!!\n";
 		}
 	}
 }
@@ -294,6 +301,7 @@ void Library::sortSubscriber(unsigned int option) {
 		auto pass = 1;
 		switch (option) {
 			case 1: // sort by id_
+				std::cout << "\nSorting the Subscribers by Id.\n";
 				while (pass < nSubscribers_) {
 					for (int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getId() > subscribers_[i + 1]->getId()) {
@@ -304,6 +312,7 @@ void Library::sortSubscriber(unsigned int option) {
 				}
 				break;
 			case 2: // sort by firstName_
+				std::cout << "\nSorting the Subscribers by First Name.\n";
 				while (pass < nSubscribers_) {
 					for (int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getFirstName() > subscribers_[i + 1]->getFirstName()) {
@@ -314,6 +323,7 @@ void Library::sortSubscriber(unsigned int option) {
 				}
 				break;
 			case 3: // sort by lastName_
+				std::cout << "\nSorting the Subscribers by Last Name.\n";
 				while (pass < nSubscribers_) {
 					for (int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getLastName() > subscribers_[i + 1]->getLastName()) {
@@ -324,6 +334,7 @@ void Library::sortSubscriber(unsigned int option) {
 				}
 				break;
 			case 4: // sort by age_
+				std::cout << "\nSorting the Subscribers by Age.\n";
 				while (pass < nSubscribers_) {
 					for (int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getAge() > subscribers_[i + 1]->getAge()) {
@@ -334,6 +345,7 @@ void Library::sortSubscriber(unsigned int option) {
 				}
 				break;
 			default:
+				std::cout << "\nSorting the Subscribers by Id.\n";
 				while (pass < nSubscribers_) {
 					for (int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getId() > subscribers_[i + 1]->getId()) {
@@ -431,6 +443,7 @@ void Library::swapBook(Book &book1, Book &book2) {
 // params[in]: subscriber_id (string), book_quote(string), returnDate (unsigned int)
 // param[out]: isBorrow (bool)
 bool Library::borrowBook(const std::string &subscriber_id, const std::string &book_quote, unsigned int return_date) {
+	std::cout << "Borrowing of the Book: " << book_quote << " By #" << subscriber_id << ".\n";
 	// checking to be done before borrowing a book
 	// 1. the book is available
 	// 2. subscriber_age >= book_minimalReaderAge
@@ -486,21 +499,15 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 	}
 
 	// 5. Initiate the borrowing process
-	std::shared_ptr<Subscriber> sub = {nullptr};
-	std::shared_ptr<Book> book = {nullptr};
-	std::shared_ptr<Borrow> borrow = {nullptr};
 	bool isBorrow = {false};
 	if (isAvailable && isOlder && !hasBook && !hasExceedLimit) { // condition for allowing a subscriber to borrow a book
-		// creating a pointer that point to a subscriber by retrieving the subscriber data from the list subscribers_
-		sub = {std::make_shared<Subscriber>(subscribers_[indexSub]->getId(), subscribers_[indexSub]->getFirstName(), subscribers_[indexSub]->getLastName(), subscribers_[indexSub]->getAge())};
 
-		// creating a pointer that points to a book by retrieving the book data from the list books_
-		book = {std::make_shared<Book>(books_[indexBook]->getQuote(), books_[indexBook]->getTitle(), books_[indexBook]->getYear(), books_[indexBook]->getMinReaderAge(), 1)};
-		// creating a pointer that points to a Borrow
-		borrow = {std::make_shared<Borrow>(sub, book, return_date)};
-		borrows_[nBorrows_++] = {&*borrow}; // add a borrow to the list borrows_
+		borrows_[nBorrows_++] = {new Borrow(subscribers_[indexSub], books_[indexBook], return_date)}; // add a borrow to the list borrows_
+
 		books_[indexBook]->setNAvailables(books_[indexBook]->getNAvailables() - 1); // decreasing the number of books available by one
+
 		isBorrow = {true}; // confirm that the book is borrowed
+
 	}
 	return isBorrow;
 }
@@ -509,13 +516,14 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 // params[in]: subscriber_id (const string&), book_quote (const string&)
 // param[out]: isReturned (bool)
 bool Library::returnBook(const std::string &subscriber_id, const std::string &book_quote) {
+	std::cout << "Returning of the Book: " << book_quote << " By #" << subscriber_id << ".\n";
 	bool isReturned = {false};
 	for (int i = 0; i < nBorrows_; i++) {
 		if (borrows_[i]->getSubscriber()->getId() == subscriber_id && borrows_[i]->getBook()->getQuote() == book_quote) {
-			//for (int j = i; j < nBorrows_; j++) {
-			//	borrows_[j] = borrows_[j + 1];
-			//}
-			std::swap(borrows_[i], borrows_[nBorrows_ - 1]);
+			for (int j = i; j < nBorrows_; j++) {
+				borrows_[j] = borrows_[j + 1];
+			}
+			//std::swap(borrows_[i], borrows_[nBorrows_ - 1]);
 			borrows_[nBorrows_ - 1] = {nullptr};
 			nBorrows_--;
 			isReturned = {true};
@@ -540,6 +548,26 @@ void Library::swapBorrow(Borrow &borrow1, Borrow &borrow2) {
 	borrow2 = std::move(tmp);
 }
 
+
+// method infoSubscriber(const string subscriber_id)const
+// param[in]: subscriber_id (const string&)const
+// param[out]: void
+void Library::infoSubscriber(const std::string &subscriber_id) const {
+	//std::cout << "\nInformation on a Subscriber: #" << subscriber_id <<".\n";
+	for (int i = 0; i < nBorrows_; i++) {
+		if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
+			borrows_[i]->getSubscriber()->print();
+			break;
+		}
+	}
+
+	for (int i = 0; i < nBorrows_; i++) {
+		if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
+			borrows_[i]->print();
+		}
+	}
+
+}
 
 // method to print out instances of Subscriber, Book, and Borrow contained in the library
 // param[in]: void
@@ -570,6 +598,7 @@ void Library::print() const {
 		throw Library::BadLibrary();
 	}
 
+
 	std::cout << "\nPrinting Borrows\n";
 	if (0 < nBorrows_ && nBorrows_ < MAX_BORROW) {
 		for (int i = 0; i < nBorrows_; i++) {
@@ -577,31 +606,12 @@ void Library::print() const {
 			borrows_[i]->print();
 		}
 	} else {
-		std::cout << "\nThe Library does not have a borrow\n";
+		std::cout << "The Library does not have a borrow\n";
 		//throw Library::BadLibrary();
 
 	}
 }
 
-// method infoSubscriber(const string subscriber_id)const
-// param[in]: subscriber_id (const string&)const
-// param[out]: void
-void Library::infoSubscriber(const std::string &subscriber_id) const {
-	std::cout << "\nInformation on a Subscriber: \n";
-	for (int i = 0; i < nBorrows_; i++) {
-		if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
-			borrows_[i]->getSubscriber()->print();
-			break;
-		}
-	}
-
-	for (int i = 0; i < nBorrows_; i++) {
-		if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
-			borrows_[i]->print();
-		}
-	}
-
-}
 
 
 
