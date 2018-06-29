@@ -108,6 +108,12 @@
 		<Unit filename="/home/pam/dev/cpp/lmis/Subscriber.h">
 			<Option target="lmis"/>
 		</Unit>
+		<Unit filename="/home/pam/dev/cpp/lmis/Title.cpp">
+			<Option target="lmis"/>
+		</Unit>
+		<Unit filename="/home/pam/dev/cpp/lmis/Title.h">
+			<Option target="lmis"/>
+		</Unit>
 		<Unit filename="/home/pam/dev/cpp/lmis/main.cpp">
 			<Option target="lmis"/>
 		</Unit>

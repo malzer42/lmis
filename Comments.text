@@ -1,0 +1,50 @@
+// Creation of Subscribers instances
+		//Subscriber sub = Subscriber("102013", "Pierre", "Mulamba", 94);
+
+
+/* std::shared_ptr<Book> book1 = std::make_shared<Book>("GA403", "Big C++", 2009, 8, 3);
+		std::shared_ptr<Book> book2 = std::make_shared<Book>("QA203", "Calcul a plusieurs variables partie 1", 2011, 3, 2);
+		std::shared_ptr<Book> book3 = std::make_shared<Book>("QA204", "Calcul a plusieurs variables partie 2", 2011, 3, 2);
+		std::shared_ptr<Book> book4 = std::make_shared<Book>("AC409", "Le Chateau ortrante", 1764, 16, 1);
+		std::shared_ptr<Book> book5 = std::make_shared<Book>("BD302", "Harry Potter", 1999, 3, 1); */
+		//decltype(book1) book6 = book2;
+
+//Subscriber sub4 = sub1;
+		//Subscriber sub5 = Subscriber(sub2);
+		//Subscriber sub6(sub3);
+		//decltype(sub1) sub7 = sub;
+//library.addSubscriber(sub4);
+		//library.addSubscriber(sub5);
+		//library.addSubscriber(sub6);
+		//library.addSubscriber(sub7);
+
+		//library.addBook(*book1);
+		//library.addBook(*book6);
+		/*sort_option = 2;
+		library.sortSubscriber(sort_option);
+		//library.sortBook(option);
+		library.print();
+
+		sort_option = 3;
+		library.sortSubscriber(sort_option);
+		//library.sortBook(option);
+		library.print();
+
+		sort_option = 4;
+		library.sortSubscriber(sort_option);
+		//library.sortBook(option);
+		library.print();*/
+
+		// Removing a Subscriber based on the id
+		//std::string subscriber_id = "1630236";
+		//library.removeSubscriber(subscriber_id);
+
+		// Removing a Book based on the quote
+		//const std::string book_quote = "AC209";
+		//library.removeBook(book_quote);
+
+		//option = 5;
+		//library.sortSubscriber(option);
+		//library.sortBook(option);
+
+

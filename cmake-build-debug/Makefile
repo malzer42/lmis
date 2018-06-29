@@ -231,6 +231,33 @@ Subscriber.cpp.s:
 	$(MAKE) -f CMakeFiles/lmis.dir/build.make CMakeFiles/lmis.dir/Subscriber.cpp.s
 .PHONY : Subscriber.cpp.s
 
+Title.o: Title.cpp.o
+
+.PHONY : Title.o
+
+# target to build an object file
+Title.cpp.o:
+	$(MAKE) -f CMakeFiles/lmis.dir/build.make CMakeFiles/lmis.dir/Title.cpp.o
+.PHONY : Title.cpp.o
+
+Title.i: Title.cpp.i
+
+.PHONY : Title.i
+
+# target to preprocess a source file
+Title.cpp.i:
+	$(MAKE) -f CMakeFiles/lmis.dir/build.make CMakeFiles/lmis.dir/Title.cpp.i
+.PHONY : Title.cpp.i
+
+Title.s: Title.cpp.s
+
+.PHONY : Title.s
+
+# target to generate assembly for a file
+Title.cpp.s:
+	$(MAKE) -f CMakeFiles/lmis.dir/build.make CMakeFiles/lmis.dir/Title.cpp.s
+.PHONY : Title.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -279,6 +306,9 @@ help:
 	@echo "... Subscriber.o"
 	@echo "... Subscriber.i"
 	@echo "... Subscriber.s"
+	@echo "... Title.o"
+	@echo "... Title.i"
+	@echo "... Title.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

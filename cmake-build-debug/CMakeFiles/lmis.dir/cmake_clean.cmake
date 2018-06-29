@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lmis.dir/Subscriber.cpp.o"
   "CMakeFiles/lmis.dir/Borrow.cpp.o"
   "CMakeFiles/lmis.dir/Library.cpp.o"
+  "CMakeFiles/lmis.dir/Title.cpp.o"
   "lmis.pdb"
   "lmis"
 )

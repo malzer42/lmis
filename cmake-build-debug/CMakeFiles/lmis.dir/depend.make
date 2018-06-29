@@ -18,9 +18,13 @@ CMakeFiles/lmis.dir/Library.cpp.o: ../Subscriber.h
 CMakeFiles/lmis.dir/Subscriber.cpp.o: ../Subscriber.cpp
 CMakeFiles/lmis.dir/Subscriber.cpp.o: ../Subscriber.h
 
+CMakeFiles/lmis.dir/Title.cpp.o: ../Title.cpp
+CMakeFiles/lmis.dir/Title.cpp.o: ../Title.h
+
 CMakeFiles/lmis.dir/main.cpp.o: ../Book.h
 CMakeFiles/lmis.dir/main.cpp.o: ../Borrow.h
 CMakeFiles/lmis.dir/main.cpp.o: ../Library.h
 CMakeFiles/lmis.dir/main.cpp.o: ../Subscriber.h
+CMakeFiles/lmis.dir/main.cpp.o: ../Title.h
 CMakeFiles/lmis.dir/main.cpp.o: ../main.cpp
 

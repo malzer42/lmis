@@ -21,11 +21,11 @@ endif
 
 # ------- Source Files are Listed Here ---------------------------
 
-SOURCES = main.cpp Subscriber.pp Book.cpp Borrow.cpp Library.cpp
+SOURCES = main.cpp Subscriber.cpp Book.cpp Borrow.cpp Library.cpp Title.cpp
 
 # ------- Object Files are the same as Sources -------------------
 
-OBJS    = main.o Subscriber.o Book.o Borrow.o Library.o
+OBJS    = main.o Subscriber.o Book.o Borrow.o Library.o Title.o
 
 # ------- Compiler flags and things ------------------------------
 
@@ -88,7 +88,7 @@ clean:
 drop: ${OBJS}
 	${CC} -o lmis ${CFLAGS} ${FLAGS} ${OBJS} ${LIBS}
 
-lmis$(O) : main.cpp Subscriber.h Book.h Borrow.h Library.h
+lmis$(O) : main.cpp Subscriber.h Book.h Borrow.h Library.h Title.h
 
 Subscriber$(O) : Subscriber.cpp Subscriber.h
 
@@ -97,3 +97,5 @@ Book$(O) : Book.cpp Book.h
 Borrow$(O) : Borrow.cpp Borrow.h
 
 Library$(O) : Library.cpp Library.h
+
+Title$(O) : Title.cpp Title.h

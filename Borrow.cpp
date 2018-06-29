@@ -26,7 +26,6 @@ Borrow::Borrow(Borrow &&borrow) noexcept : subscriber_{nullptr}, book_{nullptr},
 	borrow.setReturnDate(0);
 }
 
-
 // Copy assignment operator
 // param[in]:
 // param[out]:
@@ -126,14 +125,3 @@ void Borrow::repr() const {
 void Borrow::str() const {
 	std::cout << " Subscriber #subscriber_id. Book book_quote. Return date return_date\n";
 }
-
-
-
-
-
-
-
-
-
-
-

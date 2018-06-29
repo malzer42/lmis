@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>Borrow.h</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+        .ln {
+            color: #999999;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .s0 {
+            color: rgb(128, 128, 128);
+            font-style: italic;
+        }
+
+        .s1 {
+            color: rgb(0, 0, 0);
+        }
+
+        .s2 {
+            color: rgb(128, 128, 0);
+        }
+
+        .s3 {
+            color: rgb(0, 128, 0);
+            font-weight: bold;
+        }
+
+        .s4 {
+            color: rgb(0, 0, 128);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0">
+    <TR>
+        <TD>
+            <CENTER>
+                <FONT FACE="Arial, Helvetica" COLOR="#000000">
+                    Borrow.h</FONT>
+            </center>
+        </TD>
+    </TR>
+</TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">// Borrow.h: Header for the definition of the class Borrow.</span><span class="s1"> 
+<a name="l2"><span class="ln">2    </span></a></span><span class="s0">// Author(s): Pierre Abraham Mulamba.</span><span class="s1"> 
+<a name="l3"><span class="ln">3    </span></a></span><span class="s0">// Date of creation (modification): 2018/06/10 (2018/06/12).</span><span class="s1"> 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">// Description: The class Borrow is an aggregation of two classes --Subscriber and Book. It defines a Borrow interface and representation</span><span class="s1"> 
+<a name="l5"><span class="ln">5    </span></a></span><span class="s0">// Usage: To create an instance of a Borrow.</span><span class="s1"> 
+<a name="l6"><span class="ln">6    </span></a></span><span class="s0">// Compilation: Makefile provided.</span><span class="s1"> 
+<a name="l7"><span class="ln">7    </span></a></span><span class="s0">// Run: Include as a header file</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a> 
+<a name="l10"><span class="ln">10   </span></a></span><span class="s2">#ifndef </span><span class="s1">LMIS_BORROW_H 
+<a name="l11"><span class="ln">11   </span></a></span><span class="s2">#define </span><span class="s1">LMIS_BORROW_H 
+<a name="l12"><span class="ln">12   </span></a> 
+<a name="l13"><span class="ln">13   </span></a> 
+<a name="l14"><span class="ln">14   </span></a></span><span class="s2">#include </span><span class="s3">&lt;memory&gt;</span><span class="s1"> 
+<a name="l15"><span class="ln">15   </span></a></span><span class="s2">#include </span><span class="s3">&quot;Subscriber.h&quot;</span><span class="s1"> 
+<a name="l16"><span class="ln">16   </span></a></span><span class="s2">#include </span><span class="s3">&quot;Book.h&quot;</span><span class="s1"> 
+<a name="l17"><span class="ln">17   </span></a> 
+<a name="l18"><span class="ln">18   </span></a></span><span class="s4">class </span><span class="s1">Borrow { 
+<a name="l19"><span class="ln">19   </span></a></span><span class="s4">public</span><span class="s1">: </span><span class="s0">// Interface</span><span class="s1"> 
+<a name="l20"><span class="ln">20   </span></a> 
+<a name="l21"><span class="ln">21   </span></a>    Borrow(</span><span class="s4">const </span><span class="s1">std::shared_ptr&lt;Subscriber&gt;&amp; subscriber, </span><span class="s4">const </span><span class="s1">std::shared_ptr&lt;Book&gt;&amp; book, </span><span
+        class="s4">unsigned short </span><span class="s1">returnDate);
+<a name="l22"><span class="ln">22   </span></a>    Borrow(</span><span class="s4">const </span><span class="s1">Borrow&amp; borrow); </span><span class="s0">// Copy ctor</span><span class="s1"> 
+<a name="l23"><span class="ln">23   </span></a>    Borrow(Borrow&amp;&amp; borrow) </span><span class="s4">noexcept </span><span class="s1">; </span><span class="s0">// Move ctor</span><span class="s1"> 
+<a name="l24"><span class="ln">24   </span></a>    Borrow&amp; </span><span class="s4">operator</span><span class="s1">=(</span><span class="s4">const </span><span class="s1">Borrow&amp; borrow); </span><span class="s0">// Copy assignment</span><span class="s1"> 
+<a name="l25"><span class="ln">25   </span></a>    Borrow&amp; </span><span class="s4">operator</span><span class="s1">=(Borrow&amp;&amp; borrow) </span><span class="s4">noexcept</span><span class="s1">; </span><span class="s0">// Move assignment</span><span class="s1"> 
+<a name="l26"><span class="ln">26   </span></a> 
+<a name="l27"><span class="ln">27   </span></a> 
+<a name="l28"><span class="ln">28   </span></a>    </span><span class="s4">virtual </span><span class="s1">~Borrow(); 
+<a name="l29"><span class="ln">29   </span></a> 
+<a name="l30"><span class="ln">30   </span></a>    </span><span class="s0">// Accessors and Mutators</span><span class="s1"> 
+<a name="l31"><span class="ln">31   </span></a>    </span><span class="s4">const </span><span class="s1">std::shared_ptr&lt;Subscriber&gt; &amp;getSubscriber() </span><span class="s4">const</span><span class="s1">; 
+<a name="l32"><span class="ln">32   </span></a>    </span><span class="s4">void </span><span class="s1">setSubscriber(</span><span class="s4">const </span><span class="s1">std::shared_ptr&lt;Subscriber&gt; &amp;subscriber); 
+<a name="l33"><span class="ln">33   </span></a>    </span><span class="s4">const </span><span class="s1">std::shared_ptr&lt;Book&gt; &amp;getBook() </span><span class="s4">const</span><span class="s1">; 
+<a name="l34"><span class="ln">34   </span></a>    </span><span class="s4">void </span><span class="s1">setBook(</span><span class="s4">const </span><span class="s1">std::shared_ptr&lt;Book&gt; &amp;book); 
+<a name="l35"><span class="ln">35   </span></a>    </span><span class="s4">unsigned short </span><span class="s1">getReturnDate() </span><span class="s4">const</span><span class="s1">; 
+<a name="l36"><span class="ln">36   </span></a>    </span><span class="s4">void </span><span class="s1">setReturnDate(</span><span class="s4">unsigned short </span><span class="s1">returnDate); 
+<a name="l37"><span class="ln">37   </span></a> 
+<a name="l38"><span class="ln">38   </span></a>    </span><span class="s0">// TODO: void print()const;</span><span class="s1"> 
+<a name="l39"><span class="ln">39   </span></a>    </span><span class="s0">// TODO: void repr()const;</span><span class="s1"> 
+<a name="l40"><span class="ln">40   </span></a>    </span><span class="s0">// TODO: void str()const;</span><span class="s1"> 
+<a name="l41"><span class="ln">41   </span></a> 
+<a name="l42"><span class="ln">42   </span></a></span><span class="s4">private</span><span class="s1">: </span><span class="s0">// Representation</span><span class="s1"> 
+<a name="l43"><span class="ln">43   </span></a>    std::shared_ptr&lt;Subscriber&gt; subscriber_; </span><span class="s0">// e.g std::shared_ptr&lt;Subscriber&gt; subscriber_ = std::make_shared&lt;Subscriber&gt;(&quot;102013&quot;, &quot;Pierre&quot;, &quot;Mulamba&quot;, 94)</span><span class="s1"> 
+<a name="l44"><span class="ln">44   </span></a>    std::shared_ptr&lt;Book&gt; book_; </span><span class="s0">// e.g. std::shared_ptr&lt;Book&gt; book_ = std::make_shared&lt;Book&gt;(&quot;QA203&quot;, &quot;The Big C++&quot;, 2011, 8, 3)</span><span class="s1"> 
+<a name="l45"><span class="ln">45   </span></a>    </span><span class="s4">unsigned short </span><span class="s1">returnDate_; </span><span class="s0">// e.g. 20180612</span><span class="s1"> 
+<a name="l46"><span class="ln">46   </span></a>}; 
+<a name="l47"><span class="ln">47   </span></a> 
+<a name="l48"><span class="ln">48   </span></a> 
+<a name="l49"><span class="ln">49   </span></a></span><span class="s2">#endif </span><span class="s0">//LMIS_BORROW_H</span><span class="s1"> 
+<a name="l50"><span class="ln">50   </span></a></span></pre>
+</body>
+</html>

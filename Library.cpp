@@ -507,10 +507,11 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 		books_[indexBook]->setNAvailables(books_[indexBook]->getNAvailables() - 1); // decreasing the number of books available by one
 
 		isBorrow = {true}; // confirm that the book is borrowed
-
 	}
+
+	//delete borrow;
 	return isBorrow;
-}
+} // There is memory leak because we do not free the resource allocated to create a new Borrow
 
 // method returnBook(const string& subscriber_id, const string& book_quote)
 // params[in]: subscriber_id (const string&), book_quote (const string&)
@@ -607,18 +608,5 @@ void Library::print() const {
 		}
 	} else {
 		std::cout << "The Library does not have a borrow\n";
-		//throw Library::BadLibrary();
-
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

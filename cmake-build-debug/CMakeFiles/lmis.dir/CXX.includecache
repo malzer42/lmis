@@ -7,13 +7,15 @@
 #IncludeRegexTransform: 
 
 /home/pam/dev/cpp/lmis/Book.cpp
-iostream
--
 Book.h
 /home/pam/dev/cpp/lmis/Book.h
 
 /home/pam/dev/cpp/lmis/Book.h
+iostream
+-
 string
+-
+exception
 -
 
 /home/pam/dev/cpp/lmis/Borrow.cpp
@@ -35,7 +37,15 @@ Library.h
 /home/pam/dev/cpp/lmis/Library.h
 iostream
 -
+stdexcept
+-
+exception
+-
+utility
+-
 memory
+-
+regex
 -
 Subscriber.h
 /home/pam/dev/cpp/lmis/Subscriber.h
@@ -45,17 +55,31 @@ Borrow.h
 /home/pam/dev/cpp/lmis/Borrow.h
 
 /home/pam/dev/cpp/lmis/Subscriber.cpp
-iostream
--
 Subscriber.h
 /home/pam/dev/cpp/lmis/Subscriber.h
 
 /home/pam/dev/cpp/lmis/Subscriber.h
+iostream
+-
 string
+-
+exception
+-
+
+/home/pam/dev/cpp/lmis/Title.cpp
+Title.h
+/home/pam/dev/cpp/lmis/Title.h
+
+/home/pam/dev/cpp/lmis/Title.h
+string
+-
+iostream
 -
 
 /home/pam/dev/cpp/lmis/main.cpp
 iostream
+-
+chrono
 -
 memory
 -
@@ -65,4 +89,6 @@ Book.h
 /home/pam/dev/cpp/lmis/Book.h
 Library.h
 /home/pam/dev/cpp/lmis/Library.h
+Title.h
+/home/pam/dev/cpp/lmis/Title.h
 
