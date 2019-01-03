@@ -16,15 +16,15 @@ Library::Library() : subscribers_{nullptr}, nSubscribers_{0}, books_{nullptr}, n
 	books_ = {new Book *[MAX_BOOK]};
 	borrows_ = {new Borrow *[MAX_BORROW]};
 
-	for (int i = 0; i < MAX_SUB; i++) {
+	for (unsigned int i = 0; i < MAX_SUB; i++) {
 		subscribers_[i] = {nullptr};
 	}
 
-	for (int j = 0; j < MAX_BOOK; j++) {
+	for (unsigned int j = 0; j < MAX_BOOK; j++) {
 		books_[j] = {nullptr};
 	}
 
-	for (int k = 0; k < MAX_BORROW; k++) {
+	for (unsigned int k = 0; k < MAX_BORROW; k++) {
 		borrows_[k] = {nullptr};
 	}
 }
@@ -106,7 +106,7 @@ Library &Library::operator=(Library &&library) noexcept {
 // param[out]: void
 Library::~Library() {
 
-	for (int i = 0; i < MAX_SUB; i++) {
+	for (unsigned int i = 0; i < MAX_SUB; i++) {
 		if(subscribers_[i] != nullptr){
 			subscribers_[i] = {nullptr};
 		}
@@ -115,7 +115,7 @@ Library::~Library() {
 	delete[] subscribers_;
 	subscribers_ = {nullptr};
 
-	for (int j = 0; j < MAX_BOOK; j++) {
+	for (unsigned int j = 0; j < MAX_BOOK; j++) {
 		if(books_[j] != nullptr){
 			books_[j] = {nullptr};
 		}
@@ -124,7 +124,7 @@ Library::~Library() {
 	delete[] books_;
 	books_ = {nullptr};
 
-	for (int k = 0; k < MAX_BORROW; k++) {
+	for (unsigned int k = 0; k < MAX_BORROW; k++) {
 		if(borrows_[k] != nullptr){
 			borrows_[k] = {nullptr};
 		}
@@ -148,7 +148,7 @@ void Library::addSubscriber(Subscriber& subscriber)
 	else{
 		isPresent = {false};
 		// Loop to check an existing subscriber in the system
-		for (int i = {0}; i < nSubscribers_; ++i) { // Loop through the list of subscribers to check if the subscriber is or not in the list to avoid duplication of data
+		for (unsigned int i = {0}; i < nSubscribers_; ++i) { // Loop through the list of subscribers to check if the subscriber is or not in the list to avoid duplication of data
 			if (subscribers_[i]->getId() == subscriber.getId()) {
 				std::cout << "!!! Subscriber: #" << subscriber.getId() << " failed!!!\n";
 				std::cout << subscriber.getFirstName() << ", " << subscriber.getLastName()<<". Already exit in the Library!!!\n";
@@ -175,9 +175,9 @@ void Library::removeSubscriber(const std::string &subscriber_id) {
 		std::logic_error description("Range_Error-- Could Not Remove the Subscriber");
 		throw;
 	} else {
-		for (int i = 0; i < nSubscribers_; i++) {
+		for (unsigned int i = 0; i < nSubscribers_; i++) {
 			if (subscribers_[i]->getId() == subscriber_id) {
-				for (int j = i; j < nSubscribers_; j++) {
+				for (unsigned int j = i; j < nSubscribers_; j++) {
 					subscribers_[j] = {subscribers_[j + 1]};
 				}
 				//std::swap(subscribers_[i], subscribers_[nSubscribers_ - 1]);
@@ -202,7 +202,7 @@ void Library::addBook(Book &book) {
 	else{
 		isPresent = {false};
 		// Loop to check an existing book in the system
-		for (int i = 0; i < nBooks_; ++i) {
+		for (unsigned int i = 0; i < nBooks_; ++i) {
 			if (books_[i]->getQuote() == book.getQuote()) {
 				std::cout << "!!! Book: " << book.getQuote() << " failed!!!\n";
 				std::cout << book.getQuote() << ", " << book.getTitle()<<". Already exit in the Library!!!\n";
@@ -228,9 +228,9 @@ void Library::removeBook(const std::string &book_quote) {
 		std::logic_error description("Range_Error-- Could Not Remove the Book");
 		throw;
 	} else {
-		for (int i = 0; i < nBooks_; i++) { // seek and destroy
+		for (unsigned int i = 0; i < nBooks_; i++) { // seek and destroy
 			if (books_[i]->getQuote() == book_quote) {
-				for (int j = i; j < nBooks_; j++) {
+				for (unsigned int j = i; j < nBooks_; j++) {
 					books_[j] = {books_[j + 1]};
 				}
 				//std::swap(books_[i], books_[nBooks_ - 1]);
@@ -253,7 +253,7 @@ void Library::searchTitle(const std::string &str_title) {
 	} else {
 		std::regex pattern(str_title);
 		bool isFound = {false};
-		for (int i = 0; i < nBooks_; i++) {
+		for (unsigned int i = 0; i < nBooks_; i++) {
 			if (regex_search(books_[i]->getTitle(), pattern)) {
 				isFound = {true};
 				books_[i]->print();
@@ -277,7 +277,7 @@ void Library::searchQuote(const std::string &book_quote) {
 		throw;
 	} else {
 		bool isFound = {false};
-		for (int i = 0; i < nBooks_; ++i) {
+		for (unsigned int i = 0; i < nBooks_; ++i) {
 			if (books_[i]->getQuote() == book_quote) {
 				isFound = {true};
 				books_[i]->print();
@@ -298,12 +298,12 @@ void Library::sortSubscriber(unsigned int option) {
 		std::logic_error description("Range_Error-- Could Not run the sortSubscriber");
 		throw;
 	} else {
-		auto pass = 1;
+		unsigned int pass = 1;
 		switch (option) {
 			case 1: // sort by id_
 				std::cout << "\nSorting the Subscribers by Id.\n";
 				while (pass < nSubscribers_) {
-					for (int i = 0; i < nSubscribers_ - 1; i++) {
+					for (unsigned int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getId() > subscribers_[i + 1]->getId()) {
 							Library::swapSubscriber(*subscribers_[i], *subscribers_[i + 1]);
 						}
@@ -314,7 +314,7 @@ void Library::sortSubscriber(unsigned int option) {
 			case 2: // sort by firstName_
 				std::cout << "\nSorting the Subscribers by First Name.\n";
 				while (pass < nSubscribers_) {
-					for (int i = 0; i < nSubscribers_ - 1; i++) {
+					for (unsigned int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getFirstName() > subscribers_[i + 1]->getFirstName()) {
 							Library::swapSubscriber(*subscribers_[i], *subscribers_[i + 1]);
 						}
@@ -325,7 +325,7 @@ void Library::sortSubscriber(unsigned int option) {
 			case 3: // sort by lastName_
 				std::cout << "\nSorting the Subscribers by Last Name.\n";
 				while (pass < nSubscribers_) {
-					for (int i = 0; i < nSubscribers_ - 1; i++) {
+					for (unsigned int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getLastName() > subscribers_[i + 1]->getLastName()) {
 							Library::swapSubscriber(*subscribers_[i], *subscribers_[i + 1]);
 						}
@@ -336,7 +336,7 @@ void Library::sortSubscriber(unsigned int option) {
 			case 4: // sort by age_
 				std::cout << "\nSorting the Subscribers by Age.\n";
 				while (pass < nSubscribers_) {
-					for (int i = 0; i < nSubscribers_ - 1; i++) {
+					for (unsigned int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getAge() > subscribers_[i + 1]->getAge()) {
 							Library::swapSubscriber(*subscribers_[i], *subscribers_[i + 1]);
 						}
@@ -347,7 +347,7 @@ void Library::sortSubscriber(unsigned int option) {
 			default:
 				std::cout << "\nSorting the Subscribers by Id.\n";
 				while (pass < nSubscribers_) {
-					for (int i = 0; i < nSubscribers_ - 1; i++) {
+					for (unsigned int i = 0; i < nSubscribers_ - 1; i++) {
 						if (subscribers_[i]->getId() > subscribers_[i + 1]->getId()) {
 							Library::swapSubscriber(*subscribers_[i], *subscribers_[i + 1]);
 						}
@@ -373,11 +373,11 @@ void Library::sortBook(unsigned int option) {
 		std::logic_error description("Range_Error-- Could Not run the sortSubscriber");
 		throw;
 	} else {
-		auto pass = 1;
+		unsigned int pass = 1;
 		switch (option) {
 			case 1: // sort by quote_
 				while (pass < nBooks_) {
-					for (int i = 0; i < nBooks_ - 1; i++) {
+					for (unsigned int i = 0; i < nBooks_ - 1; i++) {
 						if (books_[i]->getQuote() > books_[i + 1]->getQuote()) {
 							Library::swapBook(*books_[i], *books_[i + 1]);
 						}
@@ -387,7 +387,7 @@ void Library::sortBook(unsigned int option) {
 				break;
 			case 2: // sort by title_
 				while (pass < nBooks_) {
-					for (int i = 0; i < nBooks_ - 1; i++) {
+					for (unsigned int i = 0; i < nBooks_ - 1; i++) {
 						if (books_[i]->getTitle() > books_[i + 1]->getTitle()) {
 							Library::swapBook(*books_[i], *books_[i + 1]);
 						}
@@ -397,7 +397,7 @@ void Library::sortBook(unsigned int option) {
 				break;
 			case 3: // sort by year_
 				while (pass < nBooks_) {
-					for (int i = 0; i < nBooks_ - 1; i++) {
+					for (unsigned int i = 0; i < nBooks_ - 1; i++) {
 						if (books_[i]->getYear() > books_[i + 1]->getYear()) {
 							Library::swapBook(*books_[i], *books_[i + 1]);
 						}
@@ -407,7 +407,7 @@ void Library::sortBook(unsigned int option) {
 				break;
 			case 4: // sort by minReaderAge_
 				while (pass < nBooks_) {
-					for (int i = 0; i < nBooks_ - 1; i++) {
+					for (unsigned int i = 0; i < nBooks_ - 1; i++) {
 						if (books_[i]->getMinReaderAge() > books_[i + 1]->getMinReaderAge()) {
 							Library::swapBook(*books_[i], *books_[i + 1]);
 						}
@@ -417,7 +417,7 @@ void Library::sortBook(unsigned int option) {
 				break;
 			default:
 				while (pass < nBooks_) {
-					for (int i = 0; i < nBooks_ - 1; i++) {
+					for (unsigned int i = 0; i < nBooks_ - 1; i++) {
 						if (books_[i]->getQuote() > books_[i + 1]->getQuote()) {
 							Library::swapBook(*books_[i], *books_[i + 1]);
 						}
@@ -456,7 +456,7 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 	// 1. Checking that the book is available
 	bool isAvailable = {false};
 	int indexBook = {0};
-	for (int i = 0; i < nBooks_; i++) {
+	for (unsigned int i = 0; i < nBooks_; i++) {
 		if (books_[i]->getQuote() == book_quote && books_[i]->getNAvailables() > 0) {
 			indexBook = {i}; // index found
 			isAvailable = {true}; // book is available
@@ -521,7 +521,7 @@ bool Library::returnBook(const std::string &subscriber_id, const std::string &bo
 	bool isReturned = {false};
 	for (int i = 0; i < nBorrows_; i++) {
 		if (borrows_[i]->getSubscriber()->getId() == subscriber_id && borrows_[i]->getBook()->getQuote() == book_quote) {
-			for (int j = i; j < nBorrows_; j++) {
+			for (unsigned int j = i; j < nBorrows_; j++) {
 				borrows_[j] = borrows_[j + 1];
 			}
 			//std::swap(borrows_[i], borrows_[nBorrows_ - 1]);
@@ -602,7 +602,7 @@ void Library::print() const {
 
 	std::cout << "\nPrinting Borrows\n";
 	if (0 < nBorrows_ && nBorrows_ < MAX_BORROW) {
-		for (int i = 0; i < nBorrows_; i++) {
+		for (unsigned int i = 0; i < nBorrows_; i++) {
 			std::cout << i << " : ";
 			borrows_[i]->print();
 		}
