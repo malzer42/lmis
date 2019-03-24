@@ -88,7 +88,7 @@ clean:
 drop: ${OBJS}
 	${CC} -o lmis ${CFLAGS} ${FLAGS} ${OBJS} ${LIBS}
 
-lmis$(O) : main.cpp Subscriber.h Book.h Borrow.h Library.h Title.h
+lmis$(O) : main.cpp Main.h
 
 Subscriber$(O) : Subscriber.cpp Subscriber.h
 

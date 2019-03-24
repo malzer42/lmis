@@ -9,36 +9,40 @@
 #include "Subscriber.h"
 
 // Ctor
-// params[in]: id(string), firstName(string), lastName(string), Age(unsigned short)
+// params[in]: id(string), fname(string), lname(string), Age(unsigned short)
 // param[out]: void
-Subscriber::Subscriber(const std::string &id, const std::string &firstName, const std::string &lastName, unsigned int age) :
-		id_{id}, firstName_{firstName}, lastName_{lastName}, age_{age} {
+Subscriber::Subscriber(const std::string& id, const std::string& fname, const std::string& lname, unsigned int age) :
+  id_{id}, fname_{fname}, lname_{lname}, age_{age}
+{
 
-	const unsigned int min_age = {6};
-	const unsigned int max_age = {100};
-	if(age < min_age || max_age < age) throw Subscriber::BadSubscriber();
+  const unsigned int min_age = {6};
+  const unsigned int max_age = {100};
+  if(age < min_age || max_age < age) throw Subscriber::BadSubscriber();
 }
 
 // Copy ctor
 // param[in]: subscriber(Subscriber)
 // param[out]: void
-Subscriber::Subscriber(const Subscriber &subscriber) : id_{subscriber.getId()}, firstName_{subscriber.getFirstName()}, lastName_{subscriber.getLastName()}, age_{subscriber.getAge()} {
+Subscriber::Subscriber(const Subscriber& subscriber) : id_{subscriber.getId()}, fname_{subscriber.getFname()},
+						       lname_{subscriber.getLname()}, age_{subscriber.getAge()}
+{
 
 }
 
 // Move ctor
 // param[in]: subscriber(Subscriber&&)
 // param[out]: void
-Subscriber::Subscriber(Subscriber &&subscriber)noexcept : id_{""}, firstName_{""}, lastName_{""}, age_{0} {
-	id_ = {subscriber.getId()};
-	firstName_ = {subscriber.getFirstName()};
-	lastName_ = {subscriber.getLastName()};
-	age_ = {subscriber.getAge()};
-	// Release resources
-	subscriber.setId("");
-	subscriber.setFirstName("");
-	subscriber.setLastName("");
-	subscriber.setAge(0);
+Subscriber::Subscriber(Subscriber&& subscriber)noexcept : id_{""}, fname_{""}, lname_{""}, age_{0}
+{
+  id_ = {subscriber.getId()};
+  fname_ = {subscriber.getFname()};
+  lname_ = {subscriber.getLname()};
+  age_ = {subscriber.getAge()};
+  // Release resources
+  subscriber.setId("");
+  subscriber.setFname("");
+  subscriber.setLname("");
+  subscriber.setAge(0);
 }
 
 //! Copy assignment operator
@@ -46,39 +50,37 @@ Subscriber::Subscriber(Subscriber &&subscriber)noexcept : id_{""}, firstName_{""
 // param[out]: *this(Subscriber&)
 Subscriber& Subscriber::operator=(const Subscriber& subscriber)
 {
-	if(this != &subscriber)
-	{
-		id_ = {subscriber.getId()};
-		firstName_ = {subscriber.getFirstName()};
-		lastName_ = {subscriber.getLastName()};
-		age_ = {subscriber.getAge()};
-	}
-	return *this;
+  if(this != &subscriber){
+    id_ = {subscriber.getId()};
+    fname_ = {subscriber.getFname()};
+    lname_ = {subscriber.getLname()};
+    age_ = {subscriber.getAge()};
+  }
+  return *this;
 }
 
 // Move assignment
 // param[in]: subscriber(Subscriber&&)
 // param[out]: *this(Subscriber&)
-Subscriber &Subscriber::operator=(Subscriber &&subscriber)noexcept
+Subscriber& Subscriber::operator=(Subscriber&& subscriber)noexcept
 {
-	id_ = {""};
-	firstName_ = {""};
-	lastName_ = {""};
-	age_ = {0};
-
-	if (this != &subscriber)
-	{
-		id_ = {subscriber.getId()};
-		firstName_ = {subscriber.getFirstName()};
-		lastName_ = {subscriber.getLastName()};
-		age_ = {subscriber.getAge()};
-
-		subscriber.setId("");
-		subscriber.setFirstName("");
-		subscriber.setLastName("");
-		subscriber.setAge(0);
-	}
-	return *this;
+  id_ = {""};
+  fname_ = {""};
+  lname_ = {""};
+  age_ = {0};
+  
+  if (this != &subscriber){
+    id_ = {subscriber.getId()};
+    fname_ = {subscriber.getFname()};
+    lname_ = {subscriber.getLname()};
+    age_ = {subscriber.getAge()};
+      
+    subscriber.setId("");
+    subscriber.setFname("");
+    subscriber.setLname("");
+    subscriber.setAge(0);
+  }
+  return *this;
 }
 
 
@@ -87,64 +89,64 @@ Subscriber &Subscriber::operator=(Subscriber &&subscriber)noexcept
 // param[in]: void
 // param[out]: id_ (const string)
 const std::string &Subscriber::getId() const {
-	return id_;
+  return id_;
 }
 
 // method getFirstName()const
 // param[in]: void
 // param[out]: firstName_ (const string)
-const std::string &Subscriber::getFirstName() const {
-	return firstName_;
+const std::string& Subscriber::getFname() const {
+  return fname_;
 }
 
-// method getLastName()const
+// method getLname()const
 // param[in]: void
-// param[out]: lastName_ (const string)
-const std::string &Subscriber::getLastName() const {
-	return lastName_;
+// param[out]: lname_ (const string)
+const std::string &Subscriber::getLname() const {
+  return lname_;
 }
 
 // method getId()const
 // param[in]: void
 // param[out]: age_ (unsigned short)
 unsigned int Subscriber::getAge() const {
-	return age_;
+  return age_;
 }
 
 // MUTATORS OR SETTERS
 // method setId(const string& id)
 // param[in]: id (string)
 // param[out]: void
-void Subscriber::setId(const std::string &id) {
-	id_ = {id};
+void Subscriber::setId(const std::string& id) {
+  id_ = {id};
 }
 
-// method setFirstName(const string& firstName)
-// param[in]: firstName (string)
+// method setFname(const string& fname)
+// param[in]: fname (string)
 // param[out]: void
-void Subscriber::setFirstName(const std::string &firstName) {
-	firstName_ = {firstName};
+void Subscriber::setFname(const std::string& fname) {
+  fname_ = {fname};
 }
 
-// method setLastName(const string& lastName)
-// param[in]: lastName (string)
+// method setLname(const string& lname)
+// param[in]: lname (string)
 // param[out]: void
-void Subscriber::setLastName(const std::string &lastName) {
-	lastName_ = {lastName};
+void Subscriber::setLname(const std::string& lname) {
+  lname_ = {lname};
 }
 
 // method setAge(unsigned short age)
 // param[in]: age (unsigned short)
 // param[out]: void
 void Subscriber::setAge(unsigned int age) {
-	age_ = {age};
+  age_ = {age};
 }
 
 // method print()const
 // param[in]: void
 // param[out]: void
 void Subscriber::print() const {
-	std::cout << getFirstName() << " , " << getLastName()<<". " << getAge() << " y.o. #" << getId()<<'\n';
+  std::cout << getFname() << " , " << getLname()<<". " << getAge() << " y.o. #" << getId()<<'\n';
 }
 
 // Printing method for developer to know how to instantiate an object of the class Subscriber
@@ -152,7 +154,7 @@ void Subscriber::print() const {
 // param[in]: void
 // param[out]: void
 void Subscriber::repr() const {
-	std::cout << "Subscriber(subscriber_id, subscriber_firstName, subscriber_lastName, subscriber_age)\n";
+  std::cout << "Subscriber(subscriber_id, subscriber_fname, subscriber_lname, subscriber_age)\n";
 }
 
 // Printing method for developer to know how to display information of the class Subscriber
@@ -160,6 +162,6 @@ void Subscriber::repr() const {
 // param[in]: void
 // param[out]: void
 void Subscriber::str() const {
-	std::cout << "firstName, lastName. age  y.o. #id\n";
+  std::cout << "fname, lname. age  y.o. #id\n";
 }
 
