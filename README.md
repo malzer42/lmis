@@ -1,2 +1,2 @@
 # lmis
-Library Management System
+Library Management Inventory System

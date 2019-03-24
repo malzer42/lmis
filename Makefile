@@ -21,11 +21,11 @@ endif
 
 # ------- Source Files are Listed Here ---------------------------
 
-SOURCES = main.cpp Subscriber.pp Book.cpp Borrow.cpp Library.cpp
+SOURCES = main.cpp Subscriber.cpp Book.cpp Borrow.cpp Library.cpp Title.cpp
 
 # ------- Object Files are the same as Sources -------------------
 
-OBJS    = main.o Subscriber.o Book.o Borrow.o Library.o
+OBJS    = main.o Subscriber.o Book.o Borrow.o Library.o Title.o
 
 # ------- Compiler flags and things ------------------------------
 
@@ -66,7 +66,7 @@ CODE1    = # -march=pentium
 CFLAGS =  ${OPTIMIZE} ${DEBUG}  ${WARNINGS} ${BOUNDS} ${PROFILE} \
           ${FLOAT0}   ${FLOAT1} ${FLOAT2}   ${CODE0}  ${CODE1} ${FAST}
 # CC = gcc-3.3 -Wno-deprecated # -fguiding-decls
-CC = g++-6 -std=c++17 -Wno-deprecated # -fguiding-decls
+CC = g++-7 -std=c++17 -Wno-deprecated # -fguiding-decls
 O  = .o
 
 %.o: %.cpp
@@ -88,7 +88,7 @@ clean:
 drop: ${OBJS}
 	${CC} -o lmis ${CFLAGS} ${FLAGS} ${OBJS} ${LIBS}
 
-lmis$(O) : main.cpp Subscriber.h Book.h Borrow.h Library.h
+lmis$(O) : main.cpp Main.h
 
 Subscriber$(O) : Subscriber.cpp Subscriber.h
 
@@ -97,3 +97,5 @@ Book$(O) : Book.cpp Book.h
 Borrow$(O) : Borrow.cpp Borrow.h
 
 Library$(O) : Library.cpp Library.h
+
+Title$(O) : Title.cpp Title.h

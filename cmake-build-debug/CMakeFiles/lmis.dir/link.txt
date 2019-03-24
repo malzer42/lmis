@@ -1,0 +1,1 @@
+/usr/bin/g++-6  -g   CMakeFiles/lmis.dir/main.cpp.o CMakeFiles/lmis.dir/Book.cpp.o CMakeFiles/lmis.dir/Subscriber.cpp.o CMakeFiles/lmis.dir/Borrow.cpp.o CMakeFiles/lmis.dir/Library.cpp.o CMakeFiles/lmis.dir/Title.cpp.o  -o lmis 

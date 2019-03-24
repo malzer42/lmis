@@ -1,0 +1,4 @@
+/snap/clion/22/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=/usr/bin/gcc-6 -DCMAKE_CXX_COMPILER=/usr/bin/g++-6 -G "CodeBlocks - Unix Makefiles" /home/pam/dev/cpp/lmis
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/pam/dev/cpp/lmis/cmake-build-debug
