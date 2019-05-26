@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     sub3.printIdCard();
     
     // Creation of Books instances
-    std::shared_ptr<Book> book = std::make_shared<Book>("HB514", "Bjh D++", 2010, 9, 4); // ("GA403", "Big C++", 2009, 8, 3);
+    std::shared_ptr<Book> book7 = std::make_shared<Book>("HB514", "Bjh D++", 2010, 9, 4); // ("GA403", "Big C++", 2009, 8, 3);
     std::shared_ptr<Book> book1 = std::make_shared<Book>("GA403", "Big C++", 2009, 8, 3); // ("GA403", "Big C++", 2009, 8, 3)
     std::shared_ptr<Book> book2 = std::make_shared<Book>("QA203", "Calcul a plusieurs variables partie 1", 2011, 3, 2);
     std::shared_ptr<Book> book3 = std::make_shared<Book>("QA204", "Calcul a plusieurs variables partie 2", 2011, 3, 2);
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
     
     std::cout << "\n";
     // Adding Books instances to the library
-    library.addBook(book);
+    library.addBook(book7);
     library.addBook(book1);
     library.addBook(book2);
     library.addBook(book3);
