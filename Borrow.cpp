@@ -1,94 +1,16 @@
-// Borrow.cpp: Cpp file for the implementation of the class Borrow
-// Created by pam on 10/06/18.
-//
+/**
+   Borrow.cpp: Cpp file for the implementation of the class Borrow.
+   Author(s): Pierre Abraham Mulamba.
+   Date of creation (modification): 2018/06/10 (2018/06/10).
+   Description: The class Subscriber is a concrete class that instantiates Subscriber objects.
+   Usage: To create an instance of a Subscriber
+   Compilation: Makefile provided.
+   Run:
+*/
 
 #include "Borrow.h"
 
-<<<<<<< HEAD
-Borrow::Borrow(const std::shared_ptr<Subscriber> &subscriber, const std::shared_ptr<Book> &book, unsigned short returnDate) :
-		subscriber_(subscriber), book_(book), returnDate_(returnDate) {}
-
-
-// Copy ctor
-Borrow::Borrow(const Borrow& borrow) : subscriber_(borrow.getSubscriber()), book_(borrow.getBook()), returnDate_(borrow.getReturnDate()) {}
-
-// Move ctor
-Borrow::Borrow(Borrow&& borrow) noexcept : subscriber_(nullptr), book_(nullptr), returnDate_(0)
-{
-	subscriber_ = borrow.getSubscriber();
-	book_ = borrow.getBook();
-	returnDate_ = borrow.getReturnDate();
-
-	borrow.setSubscriber(nullptr);
-	borrow.setBook(nullptr);
-	borrow.setReturnDate(0);
-}
-
-
-// Copy assignment
-Borrow& Borrow::operator=(const Borrow& borrow)
-{
-	if(this != &borrow){
-		subscriber_ = borrow.getSubscriber();
-		book_ = borrow.getBook();
-		returnDate_ = borrow.getReturnDate();
-	}
-	return *this;
-}
-
-// Move assignment
-Borrow& Borrow::operator=(Borrow&& borrow) noexcept
-{
-	subscriber_ = nullptr;
-	book_ = nullptr;
-	returnDate_ = 0;
-
-	if(this != &borrow){
-		subscriber_ = borrow.getSubscriber();
-		book_ = borrow.getBook();
-		returnDate_ = borrow.getReturnDate();
-	}
-	return *this;
-}
-
-Borrow::~Borrow() {
-
-}
-
-const std::shared_ptr<Subscriber> &Borrow::getSubscriber() const {
-	return subscriber_;
-}
-
-void Borrow::setSubscriber(const std::shared_ptr<Subscriber> &subscriber) {
-	subscriber_ = subscriber;
-}
-
-const std::shared_ptr<Book> &Borrow::getBook() const {
-	return book_;
-}
-
-void Borrow::setBook(const std::shared_ptr<Book> &book) {
-	book_ = book;
-}
-
-unsigned short Borrow::getReturnDate() const {
-	return returnDate_;
-}
-
-void Borrow::setReturnDate(unsigned short returnDate) {
-	returnDate_ = returnDate;
-}
-
-
-
-
-
-
-
-
-
-=======
-Borrow::Borrow(Subscriber *subscriber, Book *book, unsigned int returnDate) :
+Borrow::Borrow(Subscriber *subscriber, Book *book, const std::string& returnDate) :
   subscriber_{subscriber}, book_{book}, returnDate_{returnDate}
 {
 
@@ -103,7 +25,7 @@ Borrow::Borrow(const Borrow &borrow) : subscriber_{borrow.getSubscriber()}, book
 // Move ctor
 // param[in]:
 // param[out]:
-Borrow::Borrow(Borrow &&borrow) noexcept : subscriber_{nullptr}, book_{nullptr}, returnDate_{0}
+Borrow::Borrow(Borrow &&borrow) noexcept : subscriber_{nullptr}, book_{nullptr}, returnDate_{""}
 {
   subscriber_ = {borrow.getSubscriber()};
   book_ = {borrow.getBook()};
@@ -111,7 +33,7 @@ Borrow::Borrow(Borrow &&borrow) noexcept : subscriber_{nullptr}, book_{nullptr},
   
   borrow.setSubscriber(nullptr);
   borrow.setBook(nullptr);
-  borrow.setReturnDate(0);
+  borrow.setReturnDate("");
 }
 
 // Copy assignment operator
@@ -183,14 +105,14 @@ void Borrow::setBook(Book* book) {
 // method getRetunDate()
 // param[in]: void
 // param[out]: returnDate_ (unsigned int)
-unsigned int Borrow::getReturnDate() const {
+const std::string& Borrow::getReturnDate() const {
   return returnDate_;
 }
 
 // method setReturnDate(unsigned int returnDate)
 // param[in]: returnDate
 // param[out]: void
-void Borrow::setReturnDate(unsigned int returnDate) {
+void Borrow::setReturnDate(const std::string& returnDate) {
   returnDate_ = {returnDate};
 }
 

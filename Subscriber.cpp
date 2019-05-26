@@ -1,18 +1,20 @@
-// Subscriber.cpp: Cpp file for the implementation of the class Subscriber.
-// Author(s): Pierre Abraham Mulamba.
-// Date of creation (modification): 2018/06/10 (2018/06/100.
-// Description: The class Subscriber is a concrete class that instantiates Subscriber objects.
-// Usage: To create an instance of a Subscriber
-// Compilation: Makefile provided.
-// Run:
+/**
+   Subscriber.cpp: Cpp file for the implementation of the class Subscriber.
+   Author(s): Pierre Abraham Mulamba.
+   Date of creation (modification): 2018/06/10 (2018/06/10).
+   Description: The class Subscriber is a concrete class that instantiates Subscriber objects.
+   Usage: To create an instance of a Subscriber
+   Compilation: Makefile provided.
+   Run:
+*/
 
 #include "Subscriber.h"
 
 // Ctor
 // params[in]: id(string), fname(string), lname(string), Age(unsigned short)
 // param[out]: void
-Subscriber::Subscriber(const std::string& id, const std::string& fname, const std::string& lname, unsigned int age) :
-  id_{id}, fname_{fname}, lname_{lname}, age_{age}
+Subscriber::Subscriber(const std::string& id, const std::string& fname, const std::string& lname, unsigned int age, const std::string& sin) :
+  id_{id}, fname_{fname}, lname_{lname}, age_{age}, sin_{sin}
 {
 
   const unsigned int min_age = {6};
@@ -24,7 +26,8 @@ Subscriber::Subscriber(const std::string& id, const std::string& fname, const st
 // param[in]: subscriber(Subscriber)
 // param[out]: void
 Subscriber::Subscriber(const Subscriber& subscriber) : id_{subscriber.getId()}, fname_{subscriber.getFname()},
-						       lname_{subscriber.getLname()}, age_{subscriber.getAge()}
+						       lname_{subscriber.getLname()}, age_{subscriber.getAge()},
+						       sin_{subscriber.getSin()}
 {
 
 }
@@ -32,17 +35,20 @@ Subscriber::Subscriber(const Subscriber& subscriber) : id_{subscriber.getId()}, 
 // Move ctor
 // param[in]: subscriber(Subscriber&&)
 // param[out]: void
-Subscriber::Subscriber(Subscriber&& subscriber)noexcept : id_{""}, fname_{""}, lname_{""}, age_{0}
+Subscriber::Subscriber(Subscriber&& subscriber)noexcept : id_{""}, fname_{""}, lname_{""}, age_{0}, sin_{""}
 {
   id_ = {subscriber.getId()};
   fname_ = {subscriber.getFname()};
   lname_ = {subscriber.getLname()};
   age_ = {subscriber.getAge()};
+  sin_ = {subscriber.getSin()};
+  
   // Release resources
   subscriber.setId("");
   subscriber.setFname("");
   subscriber.setLname("");
   subscriber.setAge(0);
+  subscriber.setSin("");  
 }
 
 //! Copy assignment operator
@@ -55,6 +61,7 @@ Subscriber& Subscriber::operator=(const Subscriber& subscriber)
     fname_ = {subscriber.getFname()};
     lname_ = {subscriber.getLname()};
     age_ = {subscriber.getAge()};
+    sin_ = {subscriber.getSin()};
   }
   return *this;
 }
@@ -68,17 +75,20 @@ Subscriber& Subscriber::operator=(Subscriber&& subscriber)noexcept
   fname_ = {""};
   lname_ = {""};
   age_ = {0};
-  
+  sin_ = {""};
+        
   if (this != &subscriber){
     id_ = {subscriber.getId()};
     fname_ = {subscriber.getFname()};
     lname_ = {subscriber.getLname()};
     age_ = {subscriber.getAge()};
-      
+    sin_ = {subscriber.getSin()};
+    
     subscriber.setId("");
     subscriber.setFname("");
     subscriber.setLname("");
     subscriber.setAge(0);
+    subscriber.setSin("");  
   }
   return *this;
 }
@@ -87,9 +97,25 @@ Subscriber& Subscriber::operator=(Subscriber&& subscriber)noexcept
 // ACCESSORS OR GETTERS
 // method getId()const
 // param[in]: void
-// param[out]: id_ (const string)
+// param[out]: id_ (const std::string)
 const std::string &Subscriber::getId() const {
   return id_;
+}
+
+// method getSin(void)const
+// param[in]: void
+// param[out]: sin_(const std::string)
+const std::string& Subscriber::getSin()const
+{
+  return sin_;
+}
+
+// method setSin(const std::string& sin)
+// param[in]: sin(const std::string&)
+// param[out]: void
+void Subscriber::setSin(const std::string& sin)
+{
+  sin_ = {sin};
 }
 
 // method getFirstName()const
@@ -165,3 +191,11 @@ void Subscriber::str() const {
   std::cout << "fname, lname. age  y.o. #id\n";
 }
 
+void Subscriber::printIdCard()const
+{
+  std::cout << "\nLibrany Management Inventory System\n"
+	    <<"ID #: " << getId()
+	    <<"\nLast name: " << getLname()
+	    <<"\nFirst name: " << getFname()
+	    <<'\n';
+}

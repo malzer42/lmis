@@ -1,12 +1,13 @@
-// Library.h: Header for the definition of the class Library.
-// Author(s): Pierre Abraham Mulamba.
-// Date of creation (modification): 2018/06/10 (2018/06/12).
-// Description: The class Library is an aggregation of three
-// classes: Subscriber, Book, and Borrow.
-// Usage: To create an instance of a Library.
-// Compilation: Makefile provided.
-// Run: Included as header file
-
+/**
+   Library.h: Header for the definition of the class Library.
+   Author(s): Pierre Abraham Mulamba.
+   Date of creation (modification): 2018/06/10 (2018/06/12).
+   Description: The class Library is an aggregation of three
+   classes: Subscriber, Book, and Borrow.
+   Usage: To create an instance of a Library.
+   Compilation: Makefile provided.
+   Run: Included as header file
+   */
 
 #ifndef LMIS_LIBRARY_H
 #define LMIS_LIBRARY_H
@@ -47,7 +48,7 @@ class Library {
   void swapSubscriber(Subscriber &sub1, Subscriber &sub2);
   
   // Processing books in the library
-  void addBook(Book& book);
+  void addBook(std::shared_ptr<Book>& book);
   void removeBook(const std::string& quote);
   void sortBook(unsigned int option);
   void swapBook(Book &book1, Book &book2);
@@ -55,7 +56,7 @@ class Library {
   // Searching, borrowing, returning, displaying methods
   void searchTitle(const std::string &str);
   void searchQuote(const std::string &book_quote);
-  bool borrowBook(const std::string &subscriber_id, const std::string &book_quote, unsigned int returnDate);
+  bool borrowBook(const std::string &subscriber_id, const std::string &book_quote, const std::string& returnDate);
   bool returnBook(const std::string &subscriber_id, const std::string &book_quote);
   void infoSubscriber(const std::string &subscriber_id) const;
   void swapBorrow(Borrow &borrow1, Borrow &borrow2);

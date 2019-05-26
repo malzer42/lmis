@@ -1,12 +1,12 @@
-// Book.cpp: Cpp file for the implementation of the class Book.
-// Author(s): Pierre Abraham Mulamba.
-// Date of creation (modification): 2018/06/10 (2018/06/12).
-// Description: The class Book is a concrete class that instantiates Book objects.
-// Usage: To create an instance of a Book.
-// Compilation: Makefile provided.
-// Run:
-
-#include <iostream>
+/**
+   Book.cpp: Cpp file for the implementation of the class Book.
+   Author(s): Pierre Abraham Mulamba.
+   Date of creation (modification): 2018/06/10 (2018/06/12).
+   Description: The class Book is a concrete class that instantiates Book objects.
+   Usage: To create an instance of a Book.
+   Compilation: Makefile provided.
+   Run:
+   */
 #include "Book.h"
 
 // Ctor
