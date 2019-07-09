@@ -1,10 +1,12 @@
-// Library.cpp: Cpp file for the implementation of the class Library.
-// Author(s): Pierre Abraham Mulamba.
-// Date of creation (modification): 2018/06/10 (2018/06/12).
-// Description: The class Library is an aggregation of three classes: Subscriber, Book, and Borrow.
-// Usage: To create an instance of a Library.
-// Compilation: Makefile provided.
-// Run:
+/**
+   Library.cpp: Cpp file for the implementation of the class Library.
+   Author(s): Pierre Abraham Mulamba.
+   Date of creation (modification): 2018/06/10 (2018/06/12).
+   Description: The class Library is an aggregation of three classes: Subscriber, Book, and Borrow.
+   Usage: To create an instance of a Library.
+   Compilation: Makefile provided.
+   Run:
+   */
 
 #include "Library.h"
 
@@ -159,8 +161,9 @@ void Library::addSubscriber(Subscriber& subscriber)
   else{
     isPresent = {false};
     // Loop to check an existing subscriber in the system
-    for (unsigned int i = {0}; i < nSubscribers_; ++i) { // Loop through the list of subscribers to check if the subscriber is or not in the list to avoid duplication of data
-      if (subscribers_[i]->getId() == subscriber.getId()) {
+    std::regex e(subscriber.getId());
+    for (unsigned int i = {0}; i < nSubscribers_; ++i) { // Loop through the list of subscribers to check if the subscriber is or not in the list.
+      if (std::regex_match(subscribers_[i]->getId(), e)) {
 	std::cout << "!!! Subscriber: #" << subscriber.getId() << " failed!!!\n";
 	std::cout << subscriber.getFname() << ", " << subscriber.getLname()<<". Already exit in the Library!!!\n";
 	isPresent = {true};
@@ -187,8 +190,9 @@ void Library::removeSubscriber(const std::string &subscriber_id)
     std::logic_error description("Range_Error-- Could Not Remove the Subscriber");
     throw;
   } else {
+    std::regex e(subscriber_id);
     for (unsigned int i = 0; i < nSubscribers_; i++) {
-      if (subscribers_[i]->getId() == subscriber_id) {
+      if (std::regex_match(subscribers_[i]->getId(), e)) {
 	for (unsigned int j = i; j < nSubscribers_; j++) {
 	  subscribers_[j] = {subscribers_[j + 1]};
 	}
@@ -204,21 +208,23 @@ void Library::removeSubscriber(const std::string &subscriber_id)
 // method to add an instance of a Book to the library
 // param[in]: book (Book)
 // param[out]: void
-void Library::addBook(Book &book)
+void Library::addBook(std::shared_ptr<Book>& book)
 {
-  std::cout << "Adding the book: " << book.getQuote() << ".\n";
+ 
+  std::cout << "Adding the book: " << book->getQuote() << ".\n";
   bool isPresent = {true};
   if(nBooks_ == 0){
-    books_[nBooks_++] = {&book};
-    std::cout << "Book: " << book.getQuote() << " added successfully!\n";
+    books_[nBooks_++] = {&*book};
+    std::cout << "Book: " << book->getQuote() << " added successfully!\n";
   }
   else{
+    std::regex e(book->getQuote());   
     isPresent = {false};
     // Loop to check an existing book in the system
     for (unsigned int i = 0; i < nBooks_; ++i) {
-      if (books_[i]->getQuote() == book.getQuote()) {
-	std::cout << "!!! Book: " << book.getQuote() << " failed!!!\n";
-	std::cout << book.getQuote() << ", " << book.getTitle()<<". Already exit in the Library!!!\n";
+      if (std::regex_match(books_[i]->getQuote(), e)) {
+	std::cout << "!!! Book: " << book->getQuote() << " failed!!!\n";
+	std::cout << book->getQuote() << ", " << book->getTitle()<<". Already exit in the Library!!!\n";
 	isPresent = {true};
 	break;
       }
@@ -227,8 +233,8 @@ void Library::addBook(Book &book)
 
   // Add an instance of a book if it does not exist in the system
   if ((!isPresent) && (nBooks_ < MAX_BOOK)) {
-    books_[nBooks_++] = {&book};
-    std::cout << "Book: " << book.getQuote() << " added successfully!\n";
+    books_[nBooks_++] = {&*book};
+    std::cout << "Book: " << book->getQuote() << " added successfully!\n";
   }
 }
 
@@ -242,8 +248,9 @@ void Library::removeBook(const std::string &book_quote)
     std::logic_error description("Range_Error-- Could Not Remove the Book");
     throw;
   } else {
+    std::regex e(book_quote);
     for (unsigned int i = 0; i < nBooks_; i++) { // seek and destroy
-      if (books_[i]->getQuote() == book_quote) {
+      if (std::regex_match(books_[i]->getQuote(), e)) {
 	for (unsigned int j = i; j < nBooks_; j++) {
 	  books_[j] = {books_[j + 1]};
 	}
@@ -270,7 +277,7 @@ void Library::searchTitle(const std::string &str_title)
     std::regex pattern(str_title);
     bool isFound = {false};
     for (unsigned int i = 0; i < nBooks_; i++) {
-      if (regex_search(books_[i]->getTitle(), pattern)) {
+      if (std::regex_search(books_[i]->getTitle(), pattern)) {
 	isFound = {true};
 	books_[i]->print();
       }
@@ -293,9 +300,10 @@ void Library::searchQuote(const std::string &book_quote)
     throw;
   }
   else {
+    std::regex pattern(book_quote);
     bool isFound = {false};
     for (unsigned int i = 0; i < nBooks_; ++i) {
-      if (books_[i]->getQuote() == book_quote) {
+      if (std::regex_search(books_[i]->getQuote(), pattern)) {
 	isFound = {true};
 	books_[i]->print();
       }
@@ -463,7 +471,7 @@ void Library::swapBook(Book &book1, Book &book2)
 // method borrowBook(sting& subscriber_id, string book_quote, unsigned int returnDate)
 // params[in]: subscriber_id (string), book_quote(string), returnDate (unsigned int)
 // param[out]: isBorrow (bool)
-bool Library::borrowBook(const std::string &subscriber_id, const std::string &book_quote, unsigned int return_date)
+bool Library::borrowBook(const std::string& subscriber_id, const std::string& book_quote, const std::string& return_date)
 {
   std::cout << "Borrowing of the Book: " << book_quote << " By #" << subscriber_id << ".\n";
   // checking to be done before borrowing a book
@@ -523,8 +531,8 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
   // 5. Initiate the borrowing process
   bool isBorrow = {false};
   if (isAvailable && isOlder && !hasBook && !hasExceedLimit) { // condition for allowing a subscriber to borrow a book
-    
-    borrows_[nBorrows_++] = {new Borrow(subscribers_[indexSub], books_[indexBook], return_date)}; // add a borrow to the list borrows_
+    std::shared_ptr<Borrow> borrow = std::make_shared<Borrow>(subscribers_[indexSub], books_[indexBook], return_date); // add a borrow to the list borrows_
+    borrows_[nBorrows_++] = {&*borrow};// {new Borrow(subscribers_[indexSub], books_[indexBook], return_date)}; // add a borrow to the list borrows_
 
     books_[indexBook]->setNAvailables(books_[indexBook]->getNAvailables() - 1); // decreasing the number of books available by one
     

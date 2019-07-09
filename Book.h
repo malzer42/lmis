@@ -1,10 +1,12 @@
-// Book.h: Header for the definition of the class Book.
-// Author(s): Pierre Abraham Mulamba.
-// Date of creation (modification): 2018/06/10 (2018/06/12).
-// Description: The class Book is a concrete class that defines a book interface and representation.
-// Usage: To create an instance of a Book.
-// Compilation: Makefile provided.
-// Run: Include as a header file
+/**
+   Book.h: Header for the definition of the class Book.
+   Author(s): Pierre Abraham Mulamba.
+   Date of creation (modification): 2018/06/10 (2018/06/12).
+   Description: The class Book is a concrete class that defines a book interface and representation.
+   Usage: To create an instance of a Book.
+   Compilation: Makefile provided.
+    Run: Include as a header file
+*/
 
 #ifndef LMIS_BOOK_H
 #define LMIS_BOOK_H
@@ -15,8 +17,9 @@
 
 class Book {
  public: // Interface
-  
-  Book(const std::string &quote = {""}, const std::string &title = {""}, unsigned int year = {0}, unsigned int minReaderAge = {0}, unsigned int nPossess = {0}); // Ctor
+
+  // Ctor
+  Book(const std::string &quote = {""}, const std::string &title = {""}, unsigned int year = {0}, unsigned int minReaderAge = {0}, unsigned int nPossess = {0}); 
   Book(const Book& book); // Copy ctor
   Book(Book&& book) noexcept ; // Move ctor
   Book& operator=(const Book& book); // Copy assignment
