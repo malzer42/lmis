@@ -1,7 +1,7 @@
 /**
    Subscriber.h: Header for the definition of the class Subscriber.
    Author(s): Pierre Abraham Mulamba.
-   Date of creation (modification): 2018/06/10 (2018/06/12).
+   Date of creation (modification): 2018/06/10 (2019/07/09).
    Description: The class Subscriber is a concrete class that defines
    a Subscriber interface and representation.
    Usage: To create an instance of a Subscriber.
@@ -50,8 +50,8 @@ class Subscriber {
   // Printing method
   void print()const ; // The actual printing method
   void printIdCard()const;
-  void str()const; // For developer to know how the information of an instance of the class Subscriber will be displayed on the screen
-  void repr()const; // For developer to know how to create an instance of the class Subscriber
+  void str()const; // How the info. of an object of type Subscriber will be displayed on the screen
+  void repr()const; // How to create an instance of the class Subscriber
 
  private:
   std::string id_; // e.g. "1839456"

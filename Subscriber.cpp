@@ -180,7 +180,7 @@ void Subscriber::print() const {
 // param[in]: void
 // param[out]: void
 void Subscriber::repr() const {
-  std::cout << "Subscriber(subscriber_id, subscriber_fname, subscriber_lname, subscriber_age)\n";
+  std::cout << "Subscriber(subscriber_id, subscriber_fname, subscriber_lname, subscriber_age, subscriber_sin)\n";
 }
 
 // Printing method for developer to know how to display information of the class Subscriber
