@@ -477,7 +477,7 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
   
   // 1. Checking that the book is available
   bool isAvailable = {false};
-  int indexBook = {0};
+  unsigned int indexBook = {0};
   for (unsigned int i = 0; i < nBooks_; i++) {
     if (books_[i]->getQuote() == book_quote && books_[i]->getNAvailables() > 0) {
       indexBook = {i}; // index found
@@ -488,8 +488,8 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
 
   // 2. Checking the subscriber_age >= book_minimalReaderAge --searching the index of a subscriber based of the subscriber id in the list subscribers_
   bool isOlder = {false};
-  int indexSub = {0};
-  for (int i = 0; i < nSubscribers_; i++) {
+  unsigned int indexSub = {0};
+  for (unsigned int i = 0; i < nSubscribers_; i++) {
     if (subscribers_[i]->getId() == subscriber_id && subscribers_[i]->getAge() >= books_[indexBook]->getMinReaderAge()) {
       indexSub = {i}; // index found
       isOlder = {true};
@@ -499,7 +499,7 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
   
   // 3. Checking that the subscriber has the book
   bool hasBook = {false};
-  for (int i = 0; i < nBorrows_; i++) {
+  for (unsigned int i = 0; i < nBorrows_; i++) {
     if (borrows_[i]->getSubscriber()->getId() == subscriber_id && borrows_[i]->getBook()->getQuote() == book_quote) {
       hasBook = {true}; // the subscriber has a book
       break;
@@ -510,7 +510,7 @@ bool Library::borrowBook(const std::string &subscriber_id, const std::string &bo
   const unsigned int N_MAX_BORROW = {2};
   unsigned int counter = {0};
   bool hasExceedLimit = {false};
-  for (int i = 0; i < nBorrows_; i++) {
+  for (unsigned int i = 0; i < nBorrows_; i++) {
     if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
       counter += 1;
       if (counter >= N_MAX_BORROW) {
@@ -542,7 +542,7 @@ bool Library::returnBook(const std::string &subscriber_id, const std::string &bo
 {
   std::cout << "Returning of the Book: " << book_quote << " By #" << subscriber_id << ".\n";
   bool isReturned = {false};
-  for (int i = 0; i < nBorrows_; i++) {
+  for (unsigned int i = 0; i < nBorrows_; i++) {
     if (borrows_[i]->getSubscriber()->getId() == subscriber_id && borrows_[i]->getBook()->getQuote() == book_quote) {
       for (unsigned int j = i; j < nBorrows_; j++) {
 	borrows_[j] = borrows_[j + 1];
@@ -555,7 +555,7 @@ bool Library::returnBook(const std::string &subscriber_id, const std::string &bo
     }
   }
 
-  for (int i = 0; i < nBooks_; i++) {
+  for (unsigned int i = 0; i < nBooks_; i++) {
     if (books_[i]->getQuote() == book_quote && isReturned) {
       books_[i]->setNAvailables(books_[i]->getNAvailables() + 1);
     }
@@ -580,14 +580,14 @@ void Library::swapBorrow(Borrow &borrow1, Borrow &borrow2)
 void Library::infoSubscriber(const std::string &subscriber_id) const
 {
   //std::cout << "\nInformation on a Subscriber: #" << subscriber_id <<".\n";
-  for (int i = 0; i < nBorrows_; i++) {
+  for (unsigned int i = 0; i < nBorrows_; i++) {
     if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
       borrows_[i]->getSubscriber()->print();
       break;
     }
   }
 
-  for (int i = 0; i < nBorrows_; i++) {
+  for (unsigned int i = 0; i < nBorrows_; i++) {
     if (borrows_[i]->getSubscriber()->getId() == subscriber_id) {
       borrows_[i]->print();
     }
@@ -601,7 +601,7 @@ void Library::print() const
 {
   std::cout << "\nPrinting Subscribers\n";
   if(0 < nSubscribers_ && nSubscribers_ < MAX_SUB){
-    for (int i = 0; i < nSubscribers_; i++) {
+    for (unsigned int i = 0; i < nSubscribers_; i++) {
       std::cout << i << " : ";
       subscribers_[i]->print();
     }
@@ -613,7 +613,7 @@ void Library::print() const
   
   std::cout << "\nPrinting Books\n";
   if(0 < nBooks_ && nBooks_ < MAX_BOOK){
-    for (int i = 0; i < nBooks_; i++) {
+    for (unsigned int i = 0; i < nBooks_; i++) {
       std::cout << i << " : ";
       books_[i]->print();
     }
