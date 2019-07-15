@@ -39,8 +39,8 @@ WARNINGS = -Wall
          # -Wstrict-prototypes
          # -Wconversion \
          # -Wredundant-decls
-OPTIMIZE =   -O0
-PROFILE  = # -pg
+OPTIMIZE = -O0
+PROFILE  = -pg
 BOUNDS   = # -fbounds-checking
 FLOAT0   = # -ffloat-store
            # Do not store floating point variables in registers, and
@@ -66,7 +66,7 @@ CODE1    = # -march=pentium
 CFLAGS =  ${OPTIMIZE} ${DEBUG}  ${WARNINGS} ${BOUNDS} ${PROFILE} \
           ${FLOAT0}   ${FLOAT1} ${FLOAT2}   ${CODE0}  ${CODE1} ${FAST}
 # CC = gcc-3.3 -Wno-deprecated # -fguiding-decls
-CC = g++-7 -std=c++17 -Wno-deprecated # -fguiding-decls
+CC = g++-9 -std=c++17 -Wno-deprecated -pedantic # -fguiding-decls
 O  = .o
 
 %.o: %.cpp
