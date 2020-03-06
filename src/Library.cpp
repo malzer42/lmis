@@ -208,7 +208,7 @@ void Library::removeSubscriber(const std::string &subscriber_id)
 // method to add an instance of a Book to the library
 // param[in]: book (Book)
 // param[out]: void
-void Library::addBook(std::unique_ptr<Book>& book)
+void Library::addBook(std::shared_ptr<Book>& book)
 {
  
   std::cout << "Adding the book: " << book->getQuote() << ".\n";

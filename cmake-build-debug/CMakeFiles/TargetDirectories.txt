@@ -1,3 +1,0 @@
-/home/pam/dev/cpp/lmis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/pam/dev/cpp/lmis/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/pam/dev/cpp/lmis/cmake-build-debug/CMakeFiles/lmis.dir

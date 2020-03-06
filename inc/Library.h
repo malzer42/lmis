@@ -48,7 +48,7 @@ class Library {
   void swapSubscriber(Subscriber &sub1, Subscriber &sub2);
   
   // Processing books in the library
-  void addBook(std::unique_ptr<Book>& book);
+  void addBook(std::shared_ptr<Book>& book);
   void removeBook(const std::string& quote);
   void sortBook(unsigned int option);
   void swapBook(Book &book1, Book &book2);
