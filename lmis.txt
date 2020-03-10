@@ -1,0 +1,107 @@
+[1;32mRunning...[1;0m
+./bin/lmis
+bin/lmis	20180625 LTS
+
+LIBRARY MANAGEMENT INVENTORY SYSTEM.
+-----INTEGRATION TEST PROGRAM.-------
+Adding: #1839456.
+Subscriber: #1839456 added successfully!
+
+Librany Management Inventory System
+ID #: 1839456
+Last name: Doe
+First name: John
+Adding: #1630236.
+Subscriber: #1630236 added successfully!
+
+Librany Management Inventory System
+ID #: 1630236
+Last name: Gagnon
+First name: Nicolas
+Adding: #1268348.
+Subscriber: #1268348 added successfully!
+
+Librany Management Inventory System
+ID #: 1268348
+Last name: Tremblay
+First name: Martin
+
+Adding the book: HB514.
+Book: HB514 added successfully!
+Adding the book: GA403.
+Book: GA403 added successfully!
+Adding the book: QA203.
+Book: QA203 added successfully!
+Adding the book: QA204.
+Book: QA204 added successfully!
+Adding the book: AC409.
+Book: AC409 added successfully!
+Adding the book: BD302.
+Book: BD302 added successfully!
+Adding the book: CE413.
+Book: CE413 added successfully!
+
+Printing Subscribers
+0 : John , Doe. 23 y.o. #1839456
+1 : Nicolas , Gagnon. 8 y.o. #1630236
+2 : Martin , Tremblay. 18 y.o. #1268348
+
+Printing Books
+0 : HB514. Bjh D++. 2010. 9 y.o. and more.
+1 : GA403. Big C++. 2009. 8 y.o. and more.
+2 : QA203. Calcul a plusieurs variables partie 1. 2011. 3 y.o. and more.
+3 : QA204. Calcul a plusieurs variables partie 2. 2011. 3 y.o. and more.
+4 : AC409. Le chateau d'Ortrante. 1764. 16 y.o. and more.
+5 : BD302. Harry Potter et le prisionier d'Azkaban. 1999. 3 y.o. and more.
+6 : CE413. Ibssz Qpuufs et le prisionier c'balbcbo. 2000. 4 y.o. and more.
+
+Printing Borrows
+The Library does not have a borrow
+
+Searching by title...: Calcul
+QA203. Calcul a plusieurs variables partie 1. 2011. 3 y.o. and more.
+QA204. Calcul a plusieurs variables partie 2. 2011. 3 y.o. and more.
+
+Searching by quote...: AC409
+AC409. Le chateau d'Ortrante. 1764. 16 y.o. and more.
+Searching by quote...: BD302
+BD302. Harry Potter et le prisionier d'Azkaban. 1999. 3 y.o. and more.
+Searching by quote...: QA204
+QA204. Calcul a plusieurs variables partie 2. 2011. 3 y.o. and more.
+Searching by quote...: QA203
+QA203. Calcul a plusieurs variables partie 1. 2011. 3 y.o. and more.
+Searching by quote...: AC209
+!!! Could not find a book with Quote: AC209!!!
+
+Borrowing of the Book: AC409 By #1630236.
+!!!Borrowing failed!!!
+Borrowing of the Book: BD302 By #1630236.
+BD302 borrowed by 1630236
+Borrowing of the Book: BD302 By #1839456.
+!!!Borrowing failed!!!
+Borrowing of the Book: BD302 By #1630236.
+!!!Borrowing failed!!!
+Borrowing of the Book: QA204 By #1630236.
+QA204 borrowed by 1630236
+Borrowing of the Book: QA203 By #1630236.
+!!!Borrowing failed!!!
+
+INFO OF A SUBSCRIBER BEFORE RETURNING A BOOK.
+Nicolas , Gagnon. 8 y.o. #1630236
+Subscriber #1630236. Book QA204. Return date 160204.
+Subscriber #1630236. Book QA204. Return date 160204.
+
+TESTS ON BOOKS RETURN.
+Returning of the Book: QA204 By #1630236.
+QA204 return by 1630236
+Returning of the Book: QA203 By #1839456.
+!!!Returning failed!!!
+
+INFOR OF A SUBSCRIBER AFTER RETURNING A BOOK.
+Nicolas , Gagnon. 8 y.o. #1630236
+Subscriber #1630236. Book QA204. Return date 160204.
+
+END OF TESTS
+PROGRAM ENDED SUCCESSFULLY!
+
+elapsed: 0.000828

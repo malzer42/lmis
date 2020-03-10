@@ -39,13 +39,13 @@ int main(int argc, char *argv[])
     sub3.printIdCard();
     
     // Creation of Books instances
-    std::unique_ptr<Book> book7 = std::make_unique<Book>("HB514", "Bjh D++", 2010, 9, 4); // ("GA403", "Big C++", 2009, 8, 3);
-    std::unique_ptr<Book> book1 = std::make_unique<Book>("GA403", "Big C++", 2009, 8, 3); // ("GA403", "Big C++", 2009, 8, 3)
-    std::unique_ptr<Book> book2 = std::make_unique<Book>("QA203", "Calcul a plusieurs variables partie 1", 2011, 3, 2);
-    std::unique_ptr<Book> book3 = std::make_unique<Book>("QA204", "Calcul a plusieurs variables partie 2", 2011, 3, 2);
-    std::unique_ptr<Book> book4 = std::make_unique<Book>("AC409", "Le chateau d'Ortrante", 1764, 16, 1);
-    std::unique_ptr<Book> book5 = std::make_unique<Book>("BD302", "Harry Potter et le prisionier d'Azkaban", 1999, 3, 1);
-    std::unique_ptr<Book> book6 = std::make_unique<Book> ("CE413", "Ibssz Qpuufs et le prisionier c'balbcbo", 2000, 4, 2);
+    std::shared_ptr<Book> book7 = std::make_shared<Book>("HB514", "Bjh D++", 2010, 9, 4); // ("GA403", "Big C++", 2009, 8, 3);
+    std::shared_ptr<Book> book1 = std::make_shared<Book>("GA403", "Big C++", 2009, 8, 3); // ("GA403", "Big C++", 2009, 8, 3)
+    std::shared_ptr<Book> book2 = std::make_shared<Book>("QA203", "Calcul a plusieurs variables partie 1", 2011, 3, 2);
+    std::shared_ptr<Book> book3 = std::make_shared<Book>("QA204", "Calcul a plusieurs variables partie 2", 2011, 3, 2);
+    std::shared_ptr<Book> book4 = std::make_shared<Book>("AC409", "Le chateau d'Ortrante", 1764, 16, 1);
+    std::shared_ptr<Book> book5 = std::make_shared<Book>("BD302", "Harry Potter et le prisionier d'Azkaban", 1999, 3, 1);
+    std::shared_ptr<Book> book6 = std::make_shared<Book> ("CE413", "Ibssz Qpuufs et le prisionier c'balbcbo", 2000, 4, 2);
     
     std::cout << "\n";
     // Adding Books instances to the library
@@ -161,6 +161,8 @@ int main(int argc, char *argv[])
     auto end = clock();
     auto elapsed_seconds = double(end - begin) / CLOCKS_PER_SEC;
     std::cout << "elapsed: " << elapsed_seconds << '\n';
+    
+    // Free resoucres
        
     return 0;
   }
